@@ -8,7 +8,7 @@ Welcome! This portfolio highlights my hands-on network engineering projects, lab
 - Cloud Networking: Azure VNets, VPN Gateway  
 
 ## Featured Projects
-- [OSPF 3-Router Lab](/ospf-3-router-lab.md)
+- [OSPF 3-Router Lab](/ospf-3-router-lab)
 - BGP Lab (coming soon)  
 - VLAN Lab (coming soon)  
 
