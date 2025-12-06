@@ -11,9 +11,9 @@ Routers:
 ---
 
 ## 📡 Topology
-
+<center>
 <img width="620" height="136" alt="image" src="https://github.com/user-attachments/assets/6cf6d942-d233-48c4-868e-1133bd1b76b0" />
-
+</center>
 
 ---
 
