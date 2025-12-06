@@ -1,4 +1,4 @@
-# OSPF 3-Router Lab
+# OSPF 3 - Router Lab
 
 ## 📌 Overview
 This lab demonstrates **OSPF adjacency formation, neighbor discovery, and route exchange** using a 3-router straight-line topology. All routers are configured in **Area 0**, and each router uses its **loopback interface as its OSPF router ID**.
