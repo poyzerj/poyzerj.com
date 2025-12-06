@@ -1,5 +1,3 @@
-remote_theme: poole/hyde
+theme: jekyll-theme-minimal
 title: Joe Poyzer - Network Engineering Portfolio
 description: This is my Network Engineering Portfolio
-baseurl: ""
-url: "https://poyzerj.com"
