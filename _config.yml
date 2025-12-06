@@ -1,3 +1,4 @@
 remote_theme: poole/hyde
 title: Joe Poyzer - Network Engineering Portfolio
 description: This is my Network Engineering Portfolio
+baseurl: ""
