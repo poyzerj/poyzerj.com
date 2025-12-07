@@ -40,7 +40,7 @@ author_profile: true
 <p>Here are some of my networking projects and labs:</p>
 
 <ul>
-  <li><a href="/projects/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
+  <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
   <li>BGP Lab (coming soon)</li>
   <li>VLAN Lab (coming soon)</li>
 </ul>
