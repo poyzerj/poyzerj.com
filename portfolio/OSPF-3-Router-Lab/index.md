@@ -62,7 +62,6 @@ author_profile: true
   font-weight: bold;
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -73,20 +72,22 @@ author_profile: true
   height: 100%;
   overflow: hidden;
   background-color: rgba(0,0,0,0);
+  padding: 40px;
 }
 
 .modal-content {
   background-color: #ffffff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  margin: auto;
   padding: 0;
   border: none;
   outline: none;
-  width: 90%;
+  width: 100%;
   max-width: 900px;
-  max-height: 80vh;
+  max-height: calc(100vh - 80px);
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   display: flex;
