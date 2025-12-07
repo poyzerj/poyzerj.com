@@ -22,12 +22,12 @@ author_profile: true
 
 .resume-header h1 {
   margin: 0 0 5px 0;
-  font-size: 29px;
+  font-size: 31px;
   font-weight: bold;
 }
 
 .resume-header .contact-info {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
@@ -36,7 +36,7 @@ author_profile: true
 }
 
 .resume-section h2 {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: bold;
   margin: 0 0 8px 0;
   padding-bottom: 2px;
@@ -44,7 +44,7 @@ author_profile: true
 }
 
 .resume-section p, .resume-section ul {
-  font-size: 15px;
+  font-size: 17px;
   margin: 0 0 10px 0;
 }
 
@@ -66,23 +66,23 @@ author_profile: true
 
 .job-title {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .job-date {
   font-style: italic;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .company-name {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 2px;
 }
 
 .company-description {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
@@ -92,11 +92,11 @@ author_profile: true
 
 .education-school {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .education-degree {
-  font-size: 15px;
+  font-size: 17px;
   font-style: italic;
 }
 </style>
