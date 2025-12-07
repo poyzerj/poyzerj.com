@@ -1,6 +1,11 @@
 remote_theme: "mmistakes/minimal-mistakes"
 title: Joe Poyzer - Network Engineering Portfolio
 description: This is my Network Engineering Portfolio
+url: "poyzerj.com"
+baseurl: ""
+author:
+  name: "Joe Poyzer"
+  bio: ""
 plugins:
   - jekyll-feed
   - jekyll-sitemap
