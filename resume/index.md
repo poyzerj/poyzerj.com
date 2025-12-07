@@ -22,13 +22,13 @@ author_profile: true
 
 .resume-header h1 {
   margin: 0 0 5px 0;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 .resume-header .contact-info {
-  font-size: 11px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .resume-section {
@@ -36,7 +36,7 @@ author_profile: true
 }
 
 .resume-section h2 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0 0 8px 0;
   padding-bottom: 2px;
@@ -44,7 +44,7 @@ author_profile: true
 }
 
 .resume-section p, .resume-section ul {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0 0 10px 0;
 }
 
@@ -66,23 +66,23 @@ author_profile: true
 
 .job-title {
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .job-date {
   font-style: italic;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .company-name {
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
   margin-bottom: 2px;
 }
 
 .company-description {
   font-style: italic;
-  font-size: 10px;
+  font-size: 13px;
   margin-bottom: 5px;
 }
 
@@ -92,11 +92,11 @@ author_profile: true
 
 .education-school {
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .education-degree {
-  font-size: 11px;
+  font-size: 14px;
   font-style: italic;
 }
 </style>
@@ -105,7 +105,7 @@ author_profile: true
   <div class="resume-header">
     <h1>Joe M. Poyzer</h1>
     <div class="contact-info">
-      1965 Silver Bell Rd, Apt 101 Eagan, MN 55122 • Cell: (712) 209-7854 • poyzerj@live.com • linkedin.com/in/jpoyzer
+      poyzerj@live.com • linkedin.com/in/jpoyzer
     </div>
   </div>
 
