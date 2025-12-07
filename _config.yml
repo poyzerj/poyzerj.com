@@ -41,7 +41,7 @@ footer:
 include:
   - .htaccess
   - about
-  - projects
+  - portfolio
   - resume
   - contact
   - _pages
