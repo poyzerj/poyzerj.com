@@ -77,13 +77,13 @@ author_profile: true
 
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto;
+  margin: 10% auto;
   padding: 0;
   border: 1px solid #888;
   width: 90%;
   max-width: 900px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: none;
 }
 
 .modal-header {
@@ -129,11 +129,14 @@ author_profile: true
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+  text-align: left;
 }
 
 .modal-body code {
   font-family: 'Courier New', monospace;
   font-size: 14px;
+  text-align: left;
+  display: block;
 }
 
 .loading {
