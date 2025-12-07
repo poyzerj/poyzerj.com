@@ -1,10 +1,9 @@
 ---
 permalink: /projects/
+title: "Projects"
 layout: single
 author_profile: true
 ---
-
-## Featured Projects
 
 Here are some of my networking projects and labs:
 
