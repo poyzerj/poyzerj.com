@@ -1,10 +1,9 @@
 ---
 permalink: /about/
+title: "About Me"
 layout: single
 author_profile: true
 ---
-
-## About Me
 
 I'm a Network Engineer with expertise in routing, switching, cloud networking, and automation. This portfolio showcases my hands-on lab work and projects.
 
