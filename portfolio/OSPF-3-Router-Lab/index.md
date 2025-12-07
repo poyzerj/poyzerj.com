@@ -31,7 +31,7 @@ author_profile: true
 
 .lab-content pre {
   font-size: 15px;
-  background-color: #f6f8fa;
+  background-color: #ffffff;
   padding: 16px;
   border-radius: 6px;
   overflow-x: auto;
@@ -126,6 +126,7 @@ author_profile: true
   padding: 20px;
   overflow-y: auto;
   flex: 1;
+  background-color: #ffffff;
 }
 
 .modal-body pre {
