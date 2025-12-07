@@ -89,7 +89,7 @@ author_profile: true
   outline: none;
   width: 90%;
   max-width: 900px;
-  max-height: 80vh;
+  max-height: 70vh;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   display: flex;
