@@ -118,11 +118,11 @@ author_profile: true
 .modal-body {
   padding: 20px;
   max-height: 70vh;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .modal-body pre {
-  background-color: #f6f8fa;
+  background-color: #ffffff;
   padding: 16px;
   border-radius: 6px;
   overflow-x: auto;
