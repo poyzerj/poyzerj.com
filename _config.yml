@@ -24,7 +24,7 @@ author:
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/poyzerj"
+      url: "https://www.linkedin.com/in/jpoyzer"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://poyzerj.com"
@@ -34,7 +34,7 @@ footer:
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/poyzerj"
+      url: "https://www.linkedin.com/in/jpoyzer"
 
 # Reading Files
 include:
