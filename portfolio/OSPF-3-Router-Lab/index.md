@@ -72,7 +72,7 @@ author_profile: true
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
 }
 
 .modal-content {
@@ -127,6 +127,23 @@ author_profile: true
   overflow-y: auto;
   flex: 1;
   background-color: #ffffff;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #999999;
 }
 
 .modal-body > div {
