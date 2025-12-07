@@ -126,7 +126,6 @@ author_profile: true
   padding: 20px;
   overflow-y: auto;
   flex: 1;
-  background-color: #ffffff;
 }
 
 .modal-body pre {
