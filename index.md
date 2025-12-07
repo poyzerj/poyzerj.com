@@ -1,3 +1,8 @@
+---
+layout: home
+author_profile: true
+---
+
 # Joe Poyzer – Network Engineer Portfolio
 
 Welcome! This portfolio highlights my hands-on network engineering projects, labs, and automation work.
