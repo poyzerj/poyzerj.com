@@ -123,9 +123,14 @@ author_profile: true
 }
 
 .modal-body {
-  padding: 20px;
+  padding: 0;
   overflow-y: auto;
   flex: 1;
+  background-color: #ffffff;
+}
+
+.modal-body > div {
+  padding: 20px;
 }
 
 .modal-body pre {
@@ -237,7 +242,7 @@ function openConfigModal(routerName, url) {
   fetch(url)
     .then(response => response.text())
     .then(data => {
-      modalContent.innerHTML = '<pre><code>' + escapeHtml(data) + '</code></pre>';
+      modalContent.innerHTML = '<div><pre><code>' + escapeHtml(data) + '</code></pre></div>';
     })
     .catch(error => {
       modalContent.innerHTML = '<div class="loading">Error loading configuration file.</div>';
