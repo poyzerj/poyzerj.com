@@ -3,7 +3,6 @@ layout: splash
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/network-header.jpg
-  caption: "Network Engineering Portfolio"
 excerpt: "Routing, Switching, Cloud Networking & Automation"
 feature_row:
   - image_path: /assets/images/project1.jpg
@@ -28,8 +27,6 @@ feature_row:
     btn_label: "Coming Soon"
     btn_class: "btn--primary"
 ---
-
-# Joe Poyzer – Network Engineer Portfolio
 
 Welcome! This portfolio highlights my hands-on network engineering projects, labs, and automation work.
 
