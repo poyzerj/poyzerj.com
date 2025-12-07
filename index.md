@@ -66,7 +66,7 @@ excerpt: "Routing, Switching, Cloud Networking & Automation"
 }
 </style>
 
-{# % include feature_row % #}
+# {# % include feature_row % #}
 
 <div class="home-content">
 
