@@ -17,9 +17,9 @@ words_per_minute: 200
 # Site Author
 author:
   name: "Joe Poyzer"
-  avatar: "/assets/images/bio-photo.jpg" # path of avatar image
+  avatar: "/assets/images/joe.png" # path of avatar image
   bio: "Network Engineer specializing in routing, switching, and automation."
-  location: "Your Location"
+  location: "Twin Cities, MN"
   email: # optional
   links:
     - label: "LinkedIn"
