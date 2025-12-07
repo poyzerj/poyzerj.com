@@ -25,9 +25,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/poyzerj"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/poyzerj" # Update with your GitHub username
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://poyzerj.com"
@@ -38,9 +35,6 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/poyzerj"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/poyzerj"
 
 # Reading Files
 include:
