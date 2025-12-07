@@ -1,5 +1,4 @@
----
-"Projects"
+Projects
 ---
 
 Future projects will be documented here:
