@@ -71,29 +71,36 @@ author_profile: true
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0;
   border: 1px solid #888;
   width: 90%;
   max-width: 900px;
+  max-height: 80vh;
   border-radius: 8px;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-header {
   padding: 16px 20px;
-  background-color: #f6f8fa;
+  background-color: #ffffff;
   border-bottom: 1px solid #ddd;
   border-radius: 8px 8px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .modal-header h3 {
@@ -117,14 +124,14 @@ author_profile: true
 
 .modal-body {
   padding: 20px;
-  max-height: 70vh;
-  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .modal-body pre {
   background-color: #ffffff;
-  padding: 16px;
-  border-radius: 6px;
+  padding: 0;
+  border-radius: 0;
   overflow-x: auto;
   margin: 0;
   font-size: 14px;
