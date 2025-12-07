@@ -10,8 +10,6 @@ author_profile: true
   font-size: 21px;
   font-weight: bold;
   margin: 20px 0 10px 0;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #666;
 }
 
 .about-content p {
