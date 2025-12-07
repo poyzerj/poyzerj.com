@@ -83,10 +83,11 @@ author_profile: true
   transform: translate(-50%, -50%);
   padding: 0;
   border: none;
+  outline: none;
   width: 90%;
   max-width: 900px;
   max-height: 80vh;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
@@ -96,7 +97,7 @@ author_profile: true
   padding: 16px 20px;
   background-color: #ffffff;
   border-bottom: none;
-  border-radius: 8px 8px 0 0;
+  border-radius: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
