@@ -239,7 +239,7 @@ ping &lt;loopback-address&gt;
 </div>
 
 <!-- Modal -->
-<div id="configModal" class="modal">
+<div id="configModal" class="modal" style="border: none !important; box-shadow: none !important;">
   <div class="modal-content">
     <div class="modal-header">
       <h3 id="modalTitle">Configuration File</h3>
