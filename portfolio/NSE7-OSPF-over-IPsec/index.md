@@ -66,7 +66,7 @@ author_profile: true
 <div class="lab-content">
 
 <h2>📌 Overview</h2>
-<p>This was the hands-on "Do-It" project completed as part of earning the <strong>Fortinet NSE 7 Enterprise Firewall Administrator</strong> certification — building a Site-to-Site IPsec VPN tunnel between two FortiGates, then running <strong>OSPF as a dynamic routing protocol over the tunnel</strong> rather than relying on static routes.</p>
+<p>This was the hands-on project completed as part of earning the <strong>Fortinet NSE 7 Enterprise Firewall Administrator</strong> certification — building a Site-to-Site IPsec VPN tunnel between two FortiGates, then running <strong>OSPF as a dynamic routing protocol over the tunnel</strong> rather than relying on static routes.</p>
 
 <p>Environment:</p>
 <ul>
