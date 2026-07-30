@@ -66,7 +66,7 @@ author_profile: true
 <div class="lab-content">
 
 <h2>📌 Overview</h2>
-<p>This was the hands-on "Do-It" project completed as part of earning the <strong>Microsoft Certified: Azure Network Engineer Associate (AZ-700)</strong> certification — a full hub-spoke Azure network built from scratch with hybrid connectivity back to a home lab environment, rather than a purely isolated cloud exercise.</p>
+<p>This was the hands-on project completed as part of earning the <strong>Microsoft Certified: Azure Network Engineer Associate (AZ-700)</strong> certification — a full hub-spoke Azure network built from scratch with hybrid connectivity back to a home lab environment, rather than a purely isolated cloud exercise.</p>
 
 <p>Environment:</p>
 <ul>
@@ -91,9 +91,6 @@ author_profile: true
 <h2>🔀 VNet Peering and Gateway Transit</h2>
 <p>In a hub-spoke topology, spoke VNets need to reach on-prem resources through the hub's VPN Gateway — which requires <strong>gateway transit</strong> to be explicitly enabled on the peering connection. Troubleshooting here involved confirming the correct gateway transit flags were set on both sides of the peering relationship, since a spoke VNet without transit enabled has no path back to on-prem through the hub.</p>
 
-<h2>🌐 DNS Forwarder Reordering Bug</h2>
-<p>Private DNS resolution for hybrid name resolution surfaced an unexpected bug related to DNS forwarder reordering — resolved by explicitly setting <code>EnableReordering: True</code> on the relevant DNS configuration, which corrected inconsistent resolution behavior between on-prem and Azure-hosted DNS zones.</p>
-
 <h2>📡 UDR / BGP Propagation Issues</h2>
 <p>User-Defined Routes (UDRs) interacting with BGP-propagated routes from the VPN Gateway required careful attention — specifically making sure UDRs didn't unintentionally override routes that should have been learned dynamically via BGP, which could silently break connectivity for spoke subnets depending on how route priority resolved.</p>
 
@@ -106,20 +103,16 @@ author_profile: true
   <li>Full hub-spoke connectivity validated end-to-end</li>
 </ul>
 
-<h2>❓ Open Item</h2>
-<p>One item from this project remains unresolved and needs direct verification on the FortiGate: whether the <strong>intra-interface (same-interface) hairpin setting</strong> is enabled to support spoke-to-spoke traffic hairpinning through the Site-to-Site VPN. This affects whether traffic between two spoke VNets can route through the on-prem FortiGate rather than needing direct spoke-to-spoke peering in Azure.</p>
-
 <h2>📝 Notes / Lessons Learned</h2>
 <ul>
   <li>IPsec Phase 2 selectors need to match exactly on both ends — a partial match can cause a tunnel to appear "up" while still dropping specific traffic</li>
   <li>Gateway transit is easy to overlook in hub-spoke designs — without it, spoke VNets have no path to on-prem even if the hub's VPN is fully functional</li>
   <li>UDRs and BGP-learned routes can silently conflict — route priority needs to be understood explicitly, not assumed</li>
-  <li>Hybrid connectivity labs are significantly more valuable than isolated cloud-only exercises, since they surface real interoperability issues (like FortiGate-specific selector behavior) that a pure Azure-to-Azure lab never would</li>
 </ul>
 
 <h2>🔗 Related Projects</h2>
 <ul>
-  <li><a href="/portfolio/NSE7-Do-It-OSPF-over-IPsec">NSE7 Do-It: OSPF over IPsec VPN</a></li>
+  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 OSPF over IPsec VPN</a></li>
 </ul>
 
 </div>
