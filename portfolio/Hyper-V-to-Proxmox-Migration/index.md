@@ -71,27 +71,27 @@ author_profile: true
 <p>Environment:</p>
 <ul>
   <li>Source: Physical Hyper-V host (FUSION-DT)</li>
-  <li>Destination: Proxmox VE</li>
-  <li>Migration tooling: Veeam</li>
+  <li>Destination: Cisco UCS host running Proxmox VE</li>
+  <li>Migration tooling: Veeam Agent for Windows</li>
 </ul>
 
 <h2>🤔 Why Migrate</h2>
-<p>The original lab was built on a physical Hyper-V host. Moving to Proxmox VE was driven by wanting more flexibility for future lab builds — nested virtualization, easier snapshotting, and a platform better suited to running mixed Windows/Linux lab environments (like the Linux-based iSCSI targets used elsewhere in the lab) side by side.</p>
+<p>The original lab ran on FUSION-DT's D drive — a spinning HDD used for VM storage. Under the I/O load of installing and running the cluster VMs, that drive was regularly getting pegged at 100% utilization, making the environment unreliable to work in. Rather than continue fighting disk performance on aging spinning storage, the cluster VMs were migrated to the Cisco UCS host, which had a proper RAID 10 SSD tier already built for exactly this kind of active VM workload (see the <a href="/portfolio/Cisco-UCS-Setup/">Cisco UCS Lab Server Deployment</a> project).</p>
 
 <h2>🔧 Migration Approach</h2>
-<p>This was effectively a <strong>P2V migration</strong> — moving a workload running on physical hardware into a virtualized environment on the new host. <strong>Veeam</strong> was used as the migration tool, chosen for its ability to handle the transfer cleanly without requiring a full manual rebuild of every VM from scratch.</p>
+<p>This was a <strong>P2V (Physical-to-Virtual) migration</strong> — moving workloads off physical hardware (FUSION-DT) into a virtualized environment on the new host. <strong>Veeam Agent for Windows</strong> was used specifically, rather than Veeam Backup &amp; Replication — Veeam Agent performs an image-level backup at the OS level, the same way whether the source is a physical machine or a VM, which made it a natural fit for restoring the environment as new VMs on the Proxmox destination without needing hypervisor-aware conversion tooling.</p>
 
 <p>The migration process followed a few key stages:</p>
 <ul>
   <li><strong>Pre-migration inventory</strong> — documenting exactly what was running on the source Hyper-V host, including the failover cluster nodes, their storage dependencies (the iSCSI shared disk), and any networking configuration that would need to carry over</li>
-  <li><strong>Migration execution</strong> — using Veeam to move the VMs from the Hyper-V source to the Proxmox destination</li>
+  <li><strong>Migration execution</strong> — using Veeam Agent for Windows to back up each VM at the OS level and restore it onto the Proxmox destination</li>
   <li><strong>Post-migration validation</strong> — the critical step, and where most of the real work happened</li>
 </ul>
 
 <h2>✅ Post-Migration Validation</h2>
 <p>Moving VMs between hypervisors isn't the hard part — confirming everything still actually works afterward is. A few things specifically needed re-validation:</p>
 <ul>
-  <li><strong>Cluster health</strong> — since the migrated environment included a Windows Server failover cluster (see the <a href="/portfolio/Failover-Cluster-Lab/">Failover Cluster Lab</a> project), cluster validation had to be re-run post-migration to confirm nothing about the underlying virtual hardware change broke cluster communication or storage access</li>
+  <li><strong>Cluster health</strong> — since the migrated environment included a Windows Server failover cluster, cluster validation had to be re-run post-migration to confirm nothing about the underlying virtual hardware change broke cluster communication or storage access</li>
   <li><strong>SCSI-3 Persistent Reservation behavior</strong> — a particular point of attention, since PR validation had already caused problems once during the original cluster build. Re-confirming this behavior specifically after a hypervisor change, rather than assuming it would "just work," avoided any surprises</li>
   <li><strong>Networking</strong> — confirming virtual NICs, VLANs, and any static IP/network configuration carried over correctly on the new virtual hardware layer under Proxmox</li>
 </ul>
@@ -108,9 +108,14 @@ author_profile: true
 <ul>
   <li>A migration isn't done when the VM boots — it's done when <strong>everything dependent on that VM is re-validated</strong>. For a standalone VM, that might mean confirming the OS boots and services start. For something like a cluster, it means re-testing the specific mechanisms (like SCSI-3 PR) that could be sensitive to underlying hardware changes.</li>
   <li>Documenting the source environment before migrating matters — knowing exactly what dependencies existed (shared storage, specific network config) made it possible to know what to check afterward, rather than discovering gaps reactively.</li>
-  <li>Choosing the right migration tool saves significant time — using Veeam instead of manually rebuilding every VM meant the migration itself was fast, letting the real time investment go into validation, which is exactly where it should go.</li>
+  <li>Choosing the right migration tool saves significant time — using Veeam Agent instead of manually rebuilding every VM meant the migration itself was fast, letting the real time investment go into validation, which is exactly where it should go.</li>
+  <li>Storage hardware matters as much as capacity — a spinning HDD under sustained VM I/O load became the actual bottleneck driving this migration, the same underlying lesson (drive technology vs. raw capacity) that came up again during the <a href="/portfolio/Failover-Cluster-Lab/">Failover Cluster Lab</a> build.</li>
 </ul>
 
-<p>This project builds directly on the <a href="/portfolio/Failover-Cluster-Lab/">Failover Cluster Lab</a> — the cluster covered there is the same one migrated in this project.</p>
+<h2>🔗 Related Projects</h2>
+<ul>
+  <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a> — the cluster covered there is the same one migrated in this project</li>
+  <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a> — the destination host for this migration</li>
+</ul>
 
 </div>
