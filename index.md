@@ -100,8 +100,8 @@ excerpt: "Routing, Switching, Systems, Virtualization & Azure"
   <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a> - Host pools, FSLogix, and RemoteApp troubleshooting</li>
   <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a> - V2V migration using Veeam</li>
   <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a> - Bare-metal server build, storage design, and network integration</li>
-  <li><a href="/portfolio/AZ-700-Do-It-Lab">AZ-700 Do-It: Azure Hub-Spoke Network</a> - Hybrid connectivity with Site-to-Site and Point-to-Site VPN</li>
-  <li><a href="/portfolio/NSE7-Do-It-OSPF-over-IPsec">NSE7 Do-It: OSPF over IPsec VPN</a> - Dynamic routing over a Site-to-Site FortiGate tunnel</li>
+  <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network</a> - Hybrid connectivity with Site-to-Site and Point-to-Site VPN</li>
+  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a> - Dynamic routing over a Site-to-Site FortiGate tunnel</li>
 </ul>
 
 <h2>Certifications</h2>
