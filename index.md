@@ -107,25 +107,6 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 <p><strong>Other:</strong> LPI Linux Essentials</p>
 
 <h2>Certifications</h2>
-<p>I maintain an extensive portfolio of industry certifications demonstrating my commitment to continuous learning:</p>
-<ul>
-  <li>Cisco CCNP Enterprise (In Progress)</li>
-  <li>Microsoft Certified: Azure Security Engineer Associate (In Progress)</li>
-  <li>Microsoft Certified: Azure Network Engineer Associate</li>
-  <li>Fortinet NSE 7 Secure Networking</li>
-  <li>Fortinet NSE 6 Secure Networking</li>
-  <li>Fortinet NSE 5 Secure Networking</li>
-  <li>Fortinet NSE 4 FortiOS</li>
-  <li>Microsoft 365 Certified: Administrator Expert</li>
-  <li>Microsoft 365 Certified: Endpoint Administrator Associate</li>
-  <li>Microsoft Certified: Azure Solutions Architect Expert</li>
-  <li>Microsoft Certified: Windows Server Hybrid Administrator Associate</li>
-  <li>Microsoft Certified: Azure Administrator Associate</li>
-  <li>Cisco CCNA Cybersecurity</li>
-  <li>Cisco CCNA Automation</li>
-  <li>Cisco CCNA</li>
-  <li>CompTIA Project+, Security+, Network+, A+</li>
-  <li>LPI Linux Essentials</li>
-</ul>
+
 
 </div>
