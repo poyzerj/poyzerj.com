@@ -108,7 +108,7 @@ author_profile: true
 
 <h2>🔗 Related Projects</h2>
 <ul>
-  <li><a href="/portfolio/AZ-700-Do-It-Lab">AZ-700 Do-It: Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
+  <li><a href="/portfolio/AZ-700-Lab">AZ-700 Do-It: Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
 </ul>
 
 </div>
