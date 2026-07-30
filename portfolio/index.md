@@ -35,7 +35,7 @@ author_profile: true
 
 <div class="projects-content">
 
-<p>Here are some of my networking projects and labs:</p>
+<p>The following projects and labs reflect hands-on work across networking, systems, virtualization, and Azure, with an emphasis on the practical troubleshooting and problem-solving involved in each build.</p>
 
 <ul>
   <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
