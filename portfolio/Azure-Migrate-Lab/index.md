@@ -74,7 +74,7 @@ author_profile: true
 <p>The planned workflow follows Azure Migrate's standard process: deploy the discovery appliance against the source host (Hyper-V or Proxmox), run an assessment to determine sizing and readiness, then use the built-in replication tooling (backed by Azure Site Recovery) to migrate a target VM into Azure. A test migration would be performed before a full cutover, consistent with the migration validation approach used across other lab projects on this site.</p>
 
 <h2>🤔 Why This Project</h2>
-<p>Azure Migrate is directly relevant to real project work — it's the tool being used for an active RDS-to-AVD migration project at Mytech Partners. Building hands-on familiarity with it, rather than relying solely on conceptual knowledge from certification study, is intended to translate directly into stronger contribution on similar real-world migration projects.</p>
+<p>Azure Migrate is directly relevant to real project work. Building hands-on familiarity with it, rather than relying solely on conceptual knowledge from certification study, is intended to translate directly into stronger contribution on similar real-world migration projects.</p>
 
 <h2>🔗 Related Projects</h2>
 <ul>
