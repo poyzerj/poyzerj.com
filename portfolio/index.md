@@ -40,7 +40,7 @@ author_profile: true
 <ul>
   <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
   <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a></li>
-  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration>/a></li>
+  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a></li>
 </ul>
 
 </div>
