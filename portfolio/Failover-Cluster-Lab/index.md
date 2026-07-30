@@ -1,15 +1,8 @@
----
-title: "Windows Server Failover Cluster: From Hyper-V Lab to Proxmox"
-excerpt: "Building a workgroup failover cluster on Windows Server 2025, then migrating it from a nested Hyper-V lab environment to a Proxmox host with Linux-based iSCSI shared storage."
-header:
-  teaser: /assets/images/failover-cluster-teaser.jpg
-sidebar:
-  - title: "Environment"
-    text: "Windows Server 2025, Proxmox VE, Linux LIO iSCSI target, nested Hyper-V"
-  - title: "Skills Demonstrated"
-    text: "Failover clustering, iSCSI storage, cluster quorum design, P2V/V2V migration, root-cause troubleshooting"
----
-
+permalink	/portfolio/OSPF-3-Router-Lab/
+title	OSPF - 3 Router Lab
+layout	single
+author_profile	true
+<style> .lab-content h2 { font-size: 21px; font-weight: bold; margin: 20px 0 10px 0; } .lab-content p { font-size: 17px; line-height: 1.6; margin-bottom: 15px; } .lab-content ul { font-size: 17px; line-height: 1.6; margin-bottom: 15px; padding-left: 20px; } .lab-content li { margin-bottom: 8px; } .lab-content pre { font-size: 15px; background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 15px; } .lab-content code { font-size: 15px; } .lab-content img { max-width: 100%; height: auto; margin: 20px 0; } .lab-content a { color: #0066cc; text-decoration: none; cursor: pointer; } .lab-content a:hover { text-decoration: underline; } .lab-content strong { font-weight: bold; } .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,0); padding: 40px; display: flex; align-items: center; justify-content: center; } .modal-content { background-color: #ffffff; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0; border: none; outline: none; width: 90%; max-width: 900px; max-height: 60vh; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); display: flex; flex-direction: column; overflow: hidden; } .modal-header { padding: 16px 20px; background-color: #ffffff; border-bottom: none; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; } .modal-header h3 { margin: 0; font-size: 19px; font-weight: bold; } .close { color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 20px; } .close:hover, .close:focus { color: #000; } .modal-body { padding: 0; overflow-y: auto; flex: 1; background-color: #ffffff; } .modal-body::-webkit-scrollbar { width: 12px; } .modal-body::-webkit-scrollbar-track { background: #ffffff; } .modal-body::-webkit-scrollbar-thumb { background: #cccccc; border-radius: 6px; } .modal-body::-webkit-scrollbar-thumb:hover { background: #999999; } .modal-body > div { padding: 20px; } .modal-body pre { background-color: #ffffff; padding: 0; border-radius: 0; overflow-x: auto; margin: 0; font-size: 14px; line-height: 1.5; text-align: left; } .modal-body code { font-family: 'Courier New', monospace; font-size: 14px; text-align: left; display: block; } .loading { text-align: center; padding: 40px; color: #666; } </style>
 ## Overview
 
 This project covers building a two-node Windows Server 2025 failover cluster in a workgroup (non-domain) configuration, backed by iSCSI shared storage, and then migrating the entire environment from a nested Hyper-V lab host to a Proxmox VE host — including the storage layer itself, moving from a physical disk-based setup to a Linux-based iSCSI target (LIO).
