@@ -45,7 +45,9 @@ author_profile: true
   <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a></li>
   <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a></li>
   <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
- <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a></li>
+  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a></li>
+  <li><a href="/portfolio/RDS-Lab">RDS Lab (Planned)</a></li>
+  <li><a href="/portfolio/Azure-Migrate-Lab">Azure Migrate Lab (Planned)</a></li>
 </ul>
 
 </div>
