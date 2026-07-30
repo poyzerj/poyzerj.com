@@ -39,8 +39,8 @@ author_profile: true
 
 <ul>
   <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
-  <li>BGP Lab (coming soon)</li>
-  <li>VLAN Lab (coming soon)</li>
+  <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a></li>
+  <li>Hyper-V to Proxmox Migration</li>
 </ul>
 
 </div>
