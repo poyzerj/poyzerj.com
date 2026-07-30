@@ -3,7 +3,7 @@ layout: splash
 header:
   overlay_color: "#2c3e50"
   overlay_image: /assets/images/network-header.jpg
-excerpt: "Routing, Switching, Systems, Virtualization & Azure"
+excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 ---
 
 <style>
