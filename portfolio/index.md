@@ -41,6 +41,9 @@ author_profile: true
   <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
   <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a></li>
   <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a></li>
+  <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a></li>
+  <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a></li>
+  <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a></li>
 </ul>
 
 </div>
