@@ -102,6 +102,9 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
   <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a> - Bare-metal server build, storage design, and network integration</li>
   <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network</a> - Hybrid connectivity with Site-to-Site and Point-to-Site VPN</li>
   <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a> - Dynamic routing over a Site-to-Site FortiGate tunnel</li>
+  <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
+  <li><a href="/portfolio/FortiGate-Bootstrap">FortiGate Bootstrap Script</a></li>
+  <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit & Troubleshoot Tool</a></li>
 </ul>
 
 <h2>Certifications</h2>
