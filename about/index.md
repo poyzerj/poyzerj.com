@@ -37,5 +37,5 @@ author_profile: true
 <h2>Beyond the Terminal</h2>
 <p>When I'm not configuring routers, building clusters, or troubleshooting network and systems issues, I enjoy building lab environments to test new technologies and document my learning through this portfolio site.</p>
 <h2>Let's Connect</h2>
-<p>I'm always interested in connecting with fellow network engineers and IT professionals. Feel free to reach out via <a href="https://www.linkedin.com/in/jpoyzer">LinkedIn</a> or <a href="mailto:poyzerj@live.com">email</a>.</p>
+<p>I'm always interested in connecting with fellow IT professionals. Feel free to reach out via <a href="https://www.linkedin.com/in/jpoyzer">LinkedIn</a> or <a href="mailto:poyzerj@live.com">email</a>.</p>
 </div>
