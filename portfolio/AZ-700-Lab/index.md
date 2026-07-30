@@ -112,7 +112,7 @@ author_profile: true
 
 <h2>🔗 Related Projects</h2>
 <ul>
-  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 OSPF over IPsec VPN</a></li>
+  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a></li>
 </ul>
 
 </div>
