@@ -93,19 +93,18 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 </ul>
 
 <h2>Featured Projects</h2>
-<ul>
-  <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a> - Multi-router OSPF configuration with area 0 implementation</li>
-  <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a> - Windows Server 2025 failover cluster with iSCSI shared storage</li>
-  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a> - P2V migration with full post-migration validation</li>
-  <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a> - Host pools, FSLogix, and RemoteApp troubleshooting</li>
-  <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a> - V2V migration using Veeam</li>
-  <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a> - Bare-metal server build, storage design, and network integration</li>
-  <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network</a> - Hybrid connectivity with Site-to-Site and Point-to-Site VPN</li>
-  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a> - Dynamic routing over a Site-to-Site FortiGate tunnel</li>
-  <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
-  <li><a href="/portfolio/FortiGate-Bootstrap">FortiGate Bootstrap Script</a></li>
-  <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit & Troubleshoot Tool</a></li>
-</ul>
+<h2>Certifications</h2>
+<p>I maintain an extensive portfolio of industry certifications demonstrating my commitment to continuous learning:</p>
+
+<p><strong>Microsoft:</strong> Azure Security Engineer Associate (In Progress) &middot; Azure Network Engineer Associate &middot; 365 Administrator Expert &middot; 365 Endpoint Administrator Associate &middot; Azure Solutions Architect Expert &middot; Windows Server Hybrid Administrator Associate &middot; Azure Administrator Associate</p>
+
+<p><strong>Cisco:</strong> CCNP Enterprise (In Progress) &middot; CCNA Cybersecurity &middot; CCNA Automation &middot; CCNA</p>
+
+<p><strong>Fortinet:</strong> NSE 7 Secure Networking &middot; NSE 6 Secure Networking &middot; NSE 5 Secure Networking &middot; NSE 4 FortiOS</p>
+
+<p><strong>CompTIA:</strong> Project+ &middot; Security+ &middot; Network+ &middot; A+</p>
+
+<p><strong>Other:</strong> LPI Linux Essentials</p>
 
 <h2>Certifications</h2>
 <p>I maintain an extensive portfolio of industry certifications demonstrating my commitment to continuous learning:</p>
