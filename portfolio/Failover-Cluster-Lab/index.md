@@ -1,5 +1,5 @@
 ---
-permalink:	/portfolio/Failover Cluster Lab/
+permalink:	/portfolio/Failover-Cluster-Lab/
 title:	"Failover Cluster Lab"
 layout:	single
 author_profile:	true
