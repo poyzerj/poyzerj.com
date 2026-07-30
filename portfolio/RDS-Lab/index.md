@@ -82,7 +82,7 @@ author_profile: true
 <p>FSLogix plus OneDrive-based folder redirection reflects how RDS environments are increasingly deployed in practice — combining traditional on-prem RDS infrastructure with cloud-connected profile and file storage, rather than a fully legacy on-prem design. This also mirrors patterns used in Azure Virtual Desktop deployments, making the two labs complementary rather than redundant.</p>
 
 <h2>📝 Why It's on the Roadmap</h2>
-<p>AVD was prioritized first, ahead of this RDS build, due to a limited-time Azure trial and near-term relevance to upcoming AVD project work. RDS remains a valuable complementary build, since many organizations run RDS-to-AVD migration projects — having hands-on depth in both environments provides a fuller picture of that migration path.</p>
+<p>AVD was prioritized first, ahead of this RDS build, due to a limited-time Azure trial.</p>
 
 <h2>🔗 Related Projects</h2>
 <ul>
