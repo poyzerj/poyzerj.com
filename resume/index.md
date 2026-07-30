@@ -105,13 +105,13 @@ author_profile: true
   <div class="resume-header">
     <h1>Joe M. Poyzer</h1>
     <div class="contact-info">
-      poyzerj@live.com • linkedin.com/in/jpoyzer
+      poyzerj@live.com &bull; linkedin.com/in/jpoyzer
     </div>
   </div>
 
   <div class="resume-section">
     <h2>Summary of Qualifications</h2>
-    <p>Almost 7 years' experience working in varied industries, including managed services, providing technical support and network administration. Known to be a team player while working independently to complete tasks while using technical skills to deploy, configure and troubleshoot PC's, networks and server environments. Excellent client facing and communication/collaboration skills. Always hungry to learn and grow technically as seen in recent certifications for Cisco, CompTIA, Microsoft, and Fortinet.</p>
+    <p>7 years' experience working in varied industries, including managed services, providing technical support and network administration. Known to be a team player while working independently to complete tasks while using technical skills to deploy, configure and troubleshoot PC's, networks and server environments. Excellent client facing and communication/collaboration skills. Always hungry to learn and grow technically as seen in recent certifications for Cisco, CompTIA, Microsoft, and Fortinet.</p>
   </div>
 
   <div class="resume-section">
@@ -128,33 +128,27 @@ author_profile: true
 
   <div class="resume-section">
     <h2>Certifications</h2>
-    <p>Cisco CCNP Enterprise (In Progress) &nbsp;&nbsp;&nbsp; Microsoft 365 Certified: Administrator Expert (August 2024)</p>
-    <p>Fortinet Certified Professional – Network Security (May 2024)</p>
-    <p>Microsoft 365 Certified: Endpoint Administrator Associate (December 2023)</p>
-    <p>Fortinet Certified Associate – Cybersecurity (October 2023)</p>
-    <p>Fortinet Certified Fundamentals – Cybersecurity (September 2023) &nbsp;&nbsp;&nbsp; CompTIA Project+ (April 2023)</p>
-    <p>Cisco Certified CyberOps Associate (March 2023) &nbsp;&nbsp;&nbsp; CompTIA Cloud+ (March 2023)</p>
-    <p>ITIL 4 Foundation (January 2023) &nbsp;&nbsp;&nbsp; LPI Linux Essentials (January 2023)</p>
-    <p>Cisco Certified DevNet Associate (September 2022)</p>
-    <p>Microsoft Certified: Windows Server Hybrid Administrator Associate (July 2022)</p>
-    <p>Microsoft Certified: Azure Administrator Associate (Dec. 2020) &nbsp;&nbsp;&nbsp; Cisco CCNA (Oct. 2020)</p>
-    <p>WatchGuard Network Security Technical Certification (July 2020) &nbsp;&nbsp;&nbsp; CompTIA Security+ (Nov. 2019)</p>
-    <p>CompTIA Network+ (July 2019), and CompTIA A+ (January 2019)</p>
+    <p><strong>Microsoft:</strong> Azure Security Engineer Associate (In Progress) &middot; Azure Network Engineer Associate (June 2026) &middot; 365 Administrator Expert (Aug 2024) &middot; 365 Endpoint Administrator Associate (Dec 2023) &middot; Azure Solutions Architect Expert (Dec 2022) &middot; Windows Server Hybrid Administrator Associate (July 2022) &middot; Azure Administrator Associate (Dec 2020)</p>
+    <p><strong>Cisco:</strong> CCNP Enterprise (In Progress) &middot; CCNA Cybersecurity (March 2023) &middot; CCNA Automation (Sept 2022) &middot; CCNA (Oct 2020)</p>
+    <p><strong>Fortinet:</strong> NSE 7 Secure Networking (May 2026) &middot; NSE 6 Secure Networking (April 2025) &middot; NSE 5 Secure Networking (May 2024) &middot; NSE 4 FortiOS (Feb 2024)</p>
+    <p><strong>CompTIA:</strong> Project+ (April 2023) &middot; Security+ (Nov 2019) &middot; Network+ (July 2019) &middot; A+ (Jan 2019)</p>
+    <p><strong>Other:</strong> LPI Linux Essentials (Jan 2023)</p>
   </div>
 
   <div class="resume-section">
     <h2>Technical Skills</h2>
     <ul>
-      <li>Knowledgeable in Microsoft Windows 10/11, macOS, Ubuntu Linux, and Windows Server 2016/2019/2022</li>
-      <li>Proficient in administering networks and configuring a wide range of network equipment, including Cisco 2800 series routers, Cisco Catalyst 2960, 3560, and 9000 series switches, Cisco Business switches, Cisco APs, Cisco WLCs, Cisco Meraki, Aruba 2930F and 3810M switches, Aruba AP-615 and AP-565 Access Points, WatchGuard T and M Series Fireboxes, Ubiquiti AP Pro Access Points, ForitGate and FortiManager. Skilled in troubleshooting network issues.</li>
-      <li>Versed in using Microsoft Office 2019/2021, Microsoft 365, Active Directory Domain Services, Microsoft Azure, Hyper-V, VMWare vSphere, DNS, DHCP, NAT, ARP, routing protocols such as OSPF, BGP, and EIGRP. Also versed with implementing VLANs, Trunking, STP, Etherchannels, First Hop Redundancy Protocols such as HSRP, VRRP, and GLBP, NAT/PAT, VRF, GRE and IPsec tunnels, AAA, ACLs, CoPP, SNMP, Syslog, Flexible NetFlow, SPAN/RSPAN/ERSPAN, and IP SLAs.</li>
-      <li>Knowledgeable in Python programming, network automation/programmability, and PowerShell scripting</li>
+      <li><strong>Operating Systems:</strong> Windows 10/11, macOS, Ubuntu Linux, Windows Server 2016/2019/2022/2025</li>
+      <li><strong>Networking Hardware:</strong> Cisco (2800 routers, Catalyst 2960/3560/9000, Business switches, APs, WLCs, Meraki), Aruba (2930F/3810M switches, AP-615/AP-565), WatchGuard T/M Series, FortiGate, FortiManager, Ubiquiti Pro APs</li>
+      <li><strong>Networking &amp; Protocols:</strong> DNS, DHCP, ARP, VLANs, trunking, STP, EtherChannel, OSPF, BGP, EIGRP, HSRP/VRRP/GLBP, NAT/PAT, VRF, GRE/IPsec, AAA, ACLs, CoPP, SNMP, Syslog, NetFlow, SPAN/RSPAN/ERSPAN, IP SLAs</li>
+      <li><strong>Cloud, Systems, &amp; Virtualization:</strong> Microsoft 365, Azure, Active Directory Domain Services, Hyper-V, VMware vSphere</li>
+      <li><strong>Automation &amp; Scripting:</strong> Python (network automation/programmability), PowerShell</li>
     </ul>
   </div>
 
   <div class="resume-section">
     <h2>Technical Experience</h2>
-    
+
     <div style="margin-bottom: 15px;">
       <div class="company-name">Mytech Partners <span style="float:right; font-weight:normal;">New Brighton, MN</span></div>
       <div class="company-description">Managed Service Provider that makes IT Easy for their clients.</div>
@@ -163,10 +157,10 @@ author_profile: true
         <div class="job-date">August 2025 – Present</div>
       </div>
       <ul>
-        <li>Deliver Tier III support by diagnosing and resolving complex network issues across routing, switching, and infrastructure services.</li>
-        <li>Follow structured support and change-management processes while documenting and escalating incidents to maintain network stability.</li>
-        <li>Assess network architectures and recommend design improvements to the solutions engineering team.</li>
-        <li>Continuously expand technical expertise in emerging networking technologies and best practices.</li>
+        <li>Deliver Tier III support by diagnosing and resolving complex network issues across Fortinet firewall environments and Cisco switching infrastructure</li>
+        <li>Facilitate project-to-service handoffs, bridging the Professional Services and Managed Service teams to ensure continuity for newly deployed client environments</li>
+        <li>Follow structured change-management and incident-management processes, ensuring documentation and escalation procedures maintain network stability and SLA compliance</li>
+        <li>Continuously expand technical expertise in emerging networking technologies and best practices</li>
       </ul>
     </div>
 
@@ -176,10 +170,10 @@ author_profile: true
         <div class="job-date">August 2023 – August 2025</div>
       </div>
       <ul>
-        <li>Support managed services clients by utilizing strong troubleshooting skills to assist with a wide range of issues</li>
-        <li>Proactively perform technical maintenance to maintain and monitor managed networks, servers, and workstations</li>
-        <li>Assist with afterhours support, services, and maintenance by responding to client and management agent service tickets</li>
-        <li>Served as a point of escalation for Tier I and other Tier II technicians</li>
+        <li>Served as Tier I and Tier II escalation point for complex technical issues, resolving network, server, and endpoint problems across managed services clients</li>
+        <li>Administered and troubleshot Fortinet firewalls, Cisco switches, and Microsoft 365/Azure environments for managed clients</li>
+        <li>Proactively monitored and maintained client networks, servers, and workstations to minimize downtime and ensure SLA compliance</li>
+        <li>Provided after-hours on-call support for critical incidents and scheduled maintenance windows</li>
       </ul>
     </div>
 
@@ -191,10 +185,10 @@ author_profile: true
         <div class="job-date">December 2022 – July 2023</div>
       </div>
       <ul>
-        <li>Maintain network uptime throughout headquarters and FUI's branch locations</li>
-        <li>Assist with the design, implementation, and installation of networks and servers</li>
-        <li>Used Microsoft Visio to document and diagram the entire network environment through the organization</li>
-        <li>Performed daily system monitoring and verified the integrity and availability of all servers, Hyper-V, software and network equipment</li>
+        <li>Maintained network uptime across headquarters and all branch locations, ensuring high availability of critical infrastructure</li>
+        <li>Assisted with the design, implementation, and installation of network and server environments</li>
+        <li>Documented and diagrammed the complete network environment using Microsoft Visio, creating a comprehensive reference for the organization</li>
+        <li>Monitored daily system health and verified integrity and availability of servers, Hyper-V environments, and network equipment</li>
       </ul>
     </div>
 
@@ -206,14 +200,14 @@ author_profile: true
         <div class="job-date">October 2022 – December 2022</div>
       </div>
       <ul>
-        <li>Assist IT Network Administrator with appliance and network management to maintain network uptime throughout the Casino and Lower Sioux</li>
-        <li>Install, configure, and support network hardware, computer hardware, software, cabling and peripherals</li>
-        <li>Used Active Directory and Office 365 to manage end user accounts using strong technical skills</li>
+        <li>Supported the IT Network Administrator with appliance and network management to maintain uptime across the Casino and Lower Sioux facilities</li>
+        <li>Installed, configured, and supported network hardware, computer hardware, software, cabling, and peripherals</li>
+        <li>Managed end user accounts and access using Active Directory and Microsoft 365</li>
       </ul>
     </div>
 
     <div style="margin-bottom: 15px;">
-      <div class="company-name">R & D Industries <span style="float:right; font-weight:normal;">Milford, IA</span></div>
+      <div class="company-name">R &amp; D Industries <span style="float:right; font-weight:normal;">Milford, IA</span></div>
       <div class="company-description">Innovative Managed Service Provider delivering technology solutions to businesses for streamlined operations.</div>
       <div class="job-header">
         <div class="job-title">Level 2 Computer Network Technician (Computer/Networking Division)</div>
@@ -232,7 +226,7 @@ author_profile: true
         <div class="job-date">January 2020 – February 2021</div>
       </div>
       <ul>
-        <li>Configured PCs and Networking equipment including Cisco Meraki, Ubiquity, HP, Aruba, and WatchGuard for proper technical set up</li>
+        <li>Configured PCs and Networking equipment including Cisco Meraki, Ubiquiti, HP, Aruba, and WatchGuard for proper technical set up</li>
         <li>Performed technical maintenance to effectively install hardware and software while monitoring client's servers, firewalls, and network equipment</li>
         <li>Configured Site to Site and Remote Access VPNs to ensure clients can utilize technology remotely</li>
       </ul>
@@ -244,8 +238,8 @@ author_profile: true
         <div class="job-date">February 2019 – January 2020</div>
       </div>
       <ul>
-        <li>Installed hardware and software to effectively configured and managed PCs for clients</li>
-        <li>Configured networking equipment including Cisco Meraki, Ubiquity, HP, Aerohive, and WatchGuard while troubleshooting and maintaining technology needs for customers</li>
+        <li>Installed hardware and software to effectively configure and manage PCs for clients</li>
+        <li>Configured networking equipment including Cisco Meraki, Ubiquiti, HP, Aerohive, and WatchGuard while troubleshooting and maintaining technology needs for customers</li>
         <li>Configured and supported proprietary hardware including iStatus, RocketFailover, and InternetAnywhere</li>
       </ul>
     </div>
