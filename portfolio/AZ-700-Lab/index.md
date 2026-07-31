@@ -91,7 +91,7 @@ author_profile: true
 <h2>🔁 Making the Peerings Transitive</h2>
 <p>VNet peering by itself isn't transitive — JPSpoke1VNet and JPSpoke2VNet being peered to JPHubVNet doesn't automatically let them talk to <em>each other</em>. To solve that, a route table was created for each spoke VNet, with a <strong>User-Defined Route (UDR)</strong> pointing to the other spoke's subnet, using the <strong>Virtual Network Gateway as the next hop</strong>. That forced spoke-to-spoke traffic to route through JPHubVNet's gateway rather than having no path at all.</p>
 
-<p><strong>Route Propagation</strong> also had to be enabled on each spoke's route table, so that routes learned from on-prem via the Site-to-Site VPN (through BGP) would actually propagate down into the spoke VNets — without it, the spokes would have no route back to the on-prem FortiGate's network even with the UDR and gateway transit in place.</p>
+<p><strong>Route Propagation</strong> also had to be enabled on each spoke's route table, so that routes learned from on-prem via the Site-to-Site VPN would actually propagate down into the spoke VNets — without it, the spokes would have no route back to the on-prem FortiGate's network even with the UDR and gateway transit in place.</p>
 
 <h2>🏠 On-Prem Side</h2>
 <p>The on-prem side of the Site-to-Site VPN was a <strong>FortiGate firewall</strong>, terminating the IPsec tunnel back to JPHubVNet's Virtual Network Gateway.</p>
