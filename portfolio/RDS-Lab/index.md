@@ -84,9 +84,5 @@ author_profile: true
 <h2>📝 Why It's on the Roadmap</h2>
 <p>AVD was prioritized first, ahead of this RDS build, due to a limited-time Azure trial.</p>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a></li>
-</ul>
 
 </div>
