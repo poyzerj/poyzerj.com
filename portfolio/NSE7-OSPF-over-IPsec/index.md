@@ -106,9 +106,4 @@ author_profile: true
   <li>Getting Phase 1/Phase 2 IPsec parameters correct is a prerequisite for everything else — a flapping or unstable tunnel will prevent OSPF adjacency from ever forming reliably, so tunnel stability has to be confirmed before troubleshooting routing</li>
 </ul>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
-</ul>
-
 </div>
