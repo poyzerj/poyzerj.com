@@ -96,10 +96,5 @@ author_profile: true
   <li>Sequencing matters: pushing WAN config first (which doesn't touch the active session) before LAN config (which does) minimizes the risk window and keeps the drop predictable and expected, rather than happening at a random point mid-run</li>
 </ul>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit &amp; Troubleshoot Tool</a></li>
-  <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
-</ul>
 
 </div>
