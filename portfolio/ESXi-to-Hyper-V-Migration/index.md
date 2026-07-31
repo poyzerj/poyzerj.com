@@ -99,10 +99,5 @@ author_profile: true
   <li>Even when a migration goes smoothly, post-migration validation is still worth doing as a matter of process — confirming VM functionality rather than just confirming the migration job completed</li>
 </ul>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a></li>
-  <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a></li>
-</ul>
 
 </div>
