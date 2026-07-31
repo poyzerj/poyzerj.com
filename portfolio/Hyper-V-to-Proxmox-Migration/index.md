@@ -114,13 +114,8 @@ author_profile: true
   <li>A migration isn't done when the VM boots — it's done when <strong>everything dependent on that VM is re-validated</strong>. For a standalone VM, that might mean confirming the OS boots and services start. For something like a cluster, it means re-testing the specific mechanisms (like SCSI-3 PR) that could be sensitive to underlying hardware changes.</li>
   <li>Documenting the source environment before migrating matters — knowing exactly what dependencies existed (shared storage, specific network config) made it possible to know what to check afterward, rather than discovering gaps reactively.</li>
   <li>Choosing the right migration tool depends on what the source actually is — a client OS like Windows 11 Pro isn't a supported Veeam B&amp;R Hyper-V target, so Veeam Agent was the right tool for the backup step, with Veeam B&amp;R's Instant VM Recovery picking up from there to finish the move. Understanding the boundary between what each Veeam product actually supports avoided wasted time trying to force B&amp;R to do something it wasn't designed for on this particular host.</li>
-  <li>Storage hardware matters as much as capacity — a spinning HDD under sustained VM I/O load became the actual bottleneck driving this migration, the same underlying lesson (drive technology vs. raw capacity) that came up again during the <a href="/portfolio/Failover-Cluster-Lab/">Failover Cluster Lab</a> build.</li>
+
 </ul>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a> — the cluster covered there is the same one migrated in this project</li>
-  <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a> — the destination host for this migration</li>
-</ul>
 
 </div>
