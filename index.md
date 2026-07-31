@@ -92,7 +92,6 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
   <li>LPI Linux Essentials certified</li>
 </ul>
 
-<h2>Featured Projects</h2>
 <h2>Certifications</h2>
 <p>I maintain an extensive portfolio of industry certifications demonstrating my commitment to continuous learning:</p>
 
@@ -105,8 +104,6 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 <p><strong>CompTIA:</strong> Project+ &middot; Security+ &middot; Network+ &middot; A+</p>
 
 <p><strong>Other:</strong> LPI Linux Essentials</p>
-
-<h2>Certifications</h2>
 
 
 </div>
