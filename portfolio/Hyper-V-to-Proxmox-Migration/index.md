@@ -78,13 +78,18 @@ author_profile: true
 <h2>🤔 Why Migrate</h2>
 <p>The original lab ran on FUSION-DT's D drive — a spinning HDD used for VM storage. Under the I/O load of installing and running the cluster VMs, that drive was regularly getting pegged at 100% utilization, making the environment unreliable to work in. Rather than continue fighting disk performance on aging spinning storage, the cluster VMs were migrated to the Cisco UCS host, which had a proper RAID 10 SSD tier already built for exactly this kind of active VM workload (see the <a href="/portfolio/Cisco-UCS-Setup/">Cisco UCS Lab Server Deployment</a> project).</p>
 
-<h2>🔧 Migration Approach</h2>
-<p>This was a <strong>P2V (Physical-to-Virtual) migration</strong> — moving workloads off physical hardware (FUSION-DT) into a virtualized environment on the new host. <strong>Veeam Agent for Windows</strong> was used specifically, rather than Veeam Backup &amp; Replication — Veeam Agent performs an image-level backup at the OS level, the same way whether the source is a physical machine or a VM, which made it a natural fit for restoring the environment as new VMs on the Proxmox destination without needing hypervisor-aware conversion tooling.</p>
+<h2>🔧 Migration Approach: Two Veeam Tools, Two Reasons</h2>
+<p>This was a <strong>P2V (Physical-to-Virtual) migration</strong> — moving workloads off physical hardware (FUSION-DT) into a virtualized environment on the new host. It required two different Veeam tools, each solving a different part of the problem.</p>
+
+<p><strong>Veeam Agent for Windows — why it was necessary:</strong> FUSION-DT was running <strong>Windows 11 Pro</strong>, not Windows Server. Veeam Backup &amp; Replication's Hyper-V integration is built around proper Hyper-V hosts (Windows Server with the Hyper-V role, or a dedicated Hyper-V Server) — it wasn't a supported target for hypervisor-level, host-integrated backup against a Windows 11 Pro machine, even with the client Hyper-V role enabled. Veeam Agent for Windows sidesteps that entirely by performing an image-level backup at the OS level, from inside the guest, regardless of what the underlying host is — which made it the right tool to actually get the VMs backed up off FUSION-DT in the first place.</p>
+
+<p><strong>Veeam Backup &amp; Replication — finishing the migration:</strong> once the Veeam Agent backups existed, <strong>Veeam Backup &amp; Replication's Instant VM Recovery</strong> feature was used to bring those backups up as running VMs directly from the backup repository — and then migrate them into permanent production storage on the Proxmox host, completing the move rather than leaving them running from a temporary recovery state.</p>
 
 <p>The migration process followed a few key stages:</p>
 <ul>
   <li><strong>Pre-migration inventory</strong> — documenting exactly what was running on the source Hyper-V host, including the failover cluster nodes, their storage dependencies (the iSCSI shared disk), and any networking configuration that would need to carry over</li>
-  <li><strong>Migration execution</strong> — using Veeam Agent for Windows to back up each VM at the OS level and restore it onto the Proxmox destination</li>
+  <li><strong>Backup</strong> — using Veeam Agent for Windows to capture each VM at the OS level, since FUSION-DT itself wasn't a supported Veeam B&amp;R Hyper-V target</li>
+  <li><strong>Instant Recovery &amp; migration to production</strong> — using Veeam B&amp;R's Instant VM Recovery to bring the backed-up VMs online, then migrating them into permanent storage on the Proxmox host to finish the move</li>
   <li><strong>Post-migration validation</strong> — the critical step, and where most of the real work happened</li>
 </ul>
 
@@ -108,7 +113,7 @@ author_profile: true
 <ul>
   <li>A migration isn't done when the VM boots — it's done when <strong>everything dependent on that VM is re-validated</strong>. For a standalone VM, that might mean confirming the OS boots and services start. For something like a cluster, it means re-testing the specific mechanisms (like SCSI-3 PR) that could be sensitive to underlying hardware changes.</li>
   <li>Documenting the source environment before migrating matters — knowing exactly what dependencies existed (shared storage, specific network config) made it possible to know what to check afterward, rather than discovering gaps reactively.</li>
-  <li>Choosing the right migration tool saves significant time — using Veeam Agent instead of manually rebuilding every VM meant the migration itself was fast, letting the real time investment go into validation, which is exactly where it should go.</li>
+  <li>Choosing the right migration tool depends on what the source actually is — a client OS like Windows 11 Pro isn't a supported Veeam B&amp;R Hyper-V target, so Veeam Agent was the right tool for the backup step, with Veeam B&amp;R's Instant VM Recovery picking up from there to finish the move. Understanding the boundary between what each Veeam product actually supports avoided wasted time trying to force B&amp;R to do something it wasn't designed for on this particular host.</li>
   <li>Storage hardware matters as much as capacity — a spinning HDD under sustained VM I/O load became the actual bottleneck driving this migration, the same underlying lesson (drive technology vs. raw capacity) that came up again during the <a href="/portfolio/Failover-Cluster-Lab/">Failover Cluster Lab</a> build.</li>
 </ul>
 
