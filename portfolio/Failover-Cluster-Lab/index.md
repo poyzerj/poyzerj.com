@@ -122,7 +122,6 @@ author_profile: true
 <ul>
   <li>SCSI-3 PR validation issues are almost always a <strong>storage-side configuration problem</strong>, not a Windows problem — when clustering fails at this step, the fix usually lives in the iSCSI target's authentication and ACL settings</li>
   <li>RAID level choice should be driven by <strong>workload</strong>, not just redundancy needs — RAID 10 for active cluster/VM storage was the right call specifically because of its rebuild behavior and random I/O performance</li>
-  <li>Drive <strong>technology</strong> matters as much as capacity — an SMR drive that looks fine on paper can silently degrade performance under a clustering/VM workload</li>
   <li>Quorum design should match cluster topology — a disk witness made sense here because this was a single-site cluster with shared storage already in place</li>
 </ul>
 
