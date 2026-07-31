@@ -66,7 +66,7 @@ author_profile: true
 <div class="lab-content">
 
 <h2>📌 Overview</h2>
-<p>This was the hands-on "Do-It" project completed as part of earning the <strong>Microsoft Certified: Azure Network Engineer Associate (AZ-700)</strong> certification — a full hub-spoke Azure network built from scratch with hybrid connectivity back to a home lab environment, rather than a purely isolated cloud exercise.</p>
+<p>This was the hands-on project completed after earning the <strong>Microsoft Certified: Azure Network Engineer Associate (AZ-700)</strong> certification — a full hub-spoke Azure network built from scratch with hybrid connectivity back to a home lab environment, rather than a purely isolated cloud exercise.</p>
 
 <p>Environment:</p>
 <ul>
