@@ -57,7 +57,7 @@ author_profile: true
 
 <div class="lab-content">
 
-<span class="status-badge">📋 PLANNED — In Design/Planning Stage</span>
+<span class="status-badge">📋 PLANNED</span>
 
 <h2>📌 Overview</h2>
 <p>This project is planned to build hands-on depth with <strong>Azure Migrate</strong>, Microsoft's native tool for discovering, assessing, and migrating on-prem workloads into Azure. The goal is to move beyond conceptual knowledge (covered during AZ-305 study) into an actual, executed migration lab.</p>
