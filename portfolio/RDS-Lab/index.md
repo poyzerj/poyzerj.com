@@ -57,7 +57,7 @@ author_profile: true
 
 <div class="lab-content">
 
-<span class="status-badge">📋 PLANNED — Design Complete, Not Yet Built</span>
+<span class="status-badge">📋 PLANNED</span>
 
 <h2>📌 Overview</h2>
 <p>This project is planned as a full <strong>Remote Desktop Services (RDS)</strong> deployment lab, covering a complete five-server topology with modern profile management. The design phase is complete; build-out is next on the lab roadmap, following the <a href="/portfolio/AVD-Lab">AVD Lab</a>, which was prioritized first.</p>
