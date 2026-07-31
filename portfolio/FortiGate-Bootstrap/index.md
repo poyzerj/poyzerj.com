@@ -17,7 +17,12 @@ author_profile: true
   line-height: 1.6;
   margin-bottom: 15px;
 }
-
+.lab-content ol {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
 .lab-content ul {
   font-size: 17px;
   line-height: 1.6;
@@ -66,13 +71,11 @@ author_profile: true
 
 <h2>🔧 What It Does</h2>
 <ol>
-  <p>
   <li>Checks reachability, then SSHes in as <code>admin</code> with a blank password, handling the forced password-change prompt</li>
   <li>If the LAN interface is bundled into a hardware switch, breaks it out into an independent interface first</li>
   <li>Pushes WAN configuration (static IP, gateway, DNS)</li>
   <li>Pushes LAN configuration (static IP, DHCP server) — <strong>last</strong>, since this is the point where the session is expected to drop</li>
   <li>Optionally reconnects at the new LAN address to create a REST API admin account and print a one-time token</li>
-  </p>
 </ol>
 
 <h2>🖥️ Two Templates: Hardware vs. Virtual</h2>
