@@ -76,7 +76,7 @@ author_profile: true
 <h2>🚀 Migration Approach</h2>
 <p>With Veeam Backup &amp; Replication installed on VeeamServer, the migration followed a few key steps:</p>
 <ul>
-  <li><strong>Connect shared backup storage</strong> — pointed Veeam at <code>\\\\192.168.20.100\VeeamBackups</code> as the backup repository, authenticating with the <code>jpadmin</code> local administrator account</li>
+  <li><strong>Connect shared backup storage</strong> — pointed Veeam at <code>\\192.168.20.100\VeeamBackups</code> as the backup repository, authenticating with the <code>jpadmin</code> local administrator account</li>
   <li><strong>Add the ESXi host</strong> — connected Veeam to the source VMware ESXi host so it could see and back up the target VMs</li>
   <li><strong>Add the Hyper-V host</strong> — connected Veeam to the destination Hyper-V host as the migration target</li>
   <li><strong>Full backup</strong> — ran a full backup of the source VMs from ESXi to the shared backup repository</li>
