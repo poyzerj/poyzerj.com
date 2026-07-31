@@ -109,13 +109,6 @@ author_profile: true
 
 <p>Once both settings were corrected on the LIO target, cluster validation passed cleanly and the cluster came online with fully functional shared storage.</p>
 
-<h2>💾 Storage Reliability Issues</h2>
-<p>During the build, a second, unrelated problem surfaced: one of the physical drives in the storage array was a Seagate ST4000DM004 — an <strong>SMR (Shingled Magnetic Recording)</strong> drive — being used for VM/cluster storage. SMR drives use overlapping tracks for higher density, which makes them poor performers for sustained random write workloads like active VM storage, since writes can trigger costly internal re-shingling operations.</p>
-
-<p>Around the same time, a Samsung 860 EVO SSD in the environment began throwing Event ID 51 errors, indicating early failure.</p>
-
-<p>Rather than working around either issue, both drives were replaced — VM/cluster storage was moved off the SMR drive entirely, and the failing SSD was swapped out before continuing. I/O performance stabilized immediately afterward.</p>
-
 <h2>📈 Results</h2>
 <ul>
   <li>Cluster validation passed cleanly after correcting the iSCSI target's TPG attributes</li>
@@ -124,7 +117,6 @@ author_profile: true
   <li>Storage I/O stabilized after replacing the SMR drive and failing SSD</li>
 </ul>
 
-<p>This cluster was later migrated from its original Hyper-V lab host to Proxmox VE — see the <a href="/portfolio/Hyper-V-to-Proxmox-Migration/">Hyper-V to Proxmox Migration</a> project for that story.</p>
 
 <h2>📝 Notes / Lessons Learned</h2>
 <ul>
