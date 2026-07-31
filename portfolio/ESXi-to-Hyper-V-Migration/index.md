@@ -60,7 +60,7 @@ author_profile: true
   <li>Source: VMware ESXi host</li>
   <li>Destination: Hyper-V host</li>
   <li>Migration tooling: Veeam Backup &amp; Replication, running on a dedicated VM (VeeamServer)</li>
-  <li>Shared backup storage: <code>\\\\192.168.20.100\VeeamBackups</code></li>
+  <li>Shared backup storage: <code>\\192.168.20.100\VeeamBackups</code></li>
 </ul>
 
 <h2>🖥️ Why a Dedicated VeeamServer VM</h2>
