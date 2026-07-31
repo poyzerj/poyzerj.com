@@ -96,34 +96,21 @@ author_profile: true
 <h2>🏠 On-Prem Side</h2>
 <p>The on-prem side of the Site-to-Site VPN was a <strong>FortiGate firewall</strong>, terminating the IPsec tunnel back to JPHubVNet's Virtual Network Gateway.</p>
 
-<h2>🌐 DNS Forwarder Reordering Bug</h2>
-<p>Private DNS resolution for hybrid name resolution surfaced an unexpected bug related to DNS forwarder reordering — resolved by explicitly setting <code>EnableReordering: True</code> on the relevant DNS configuration, which corrected inconsistent resolution behavior between on-prem and Azure-hosted DNS zones.</p>
-
-
 <h2>📈 Results</h2>
 <ul>
   <li>Stable Site-to-Site VPN tunnel established between JPHubVNet and the on-prem FortiGate</li>
   <li>Point-to-Site VPN access working with Entra ID authentication</li>
   <li>Gateway transit enabled on both spoke peerings, letting both spokes reach on-prem resources through JPHubVNet</li>
   <li>Spoke-to-spoke routing working via UDRs pointing to the Virtual Network Gateway, with Route Propagation enabled to bring in on-prem routes</li>
-  <li>Private DNS resolution working correctly across hybrid environments after resolving the forwarder reordering issue</li>
   <li>Full hub-spoke connectivity validated end-to-end</li>
 </ul>
-
-<h2>❓ Open Item</h2>
-<p>One item from this project remains unresolved and needs direct verification on the FortiGate: whether the <strong>intra-interface (same-interface) hairpin setting</strong> is enabled to support spoke-to-spoke traffic hairpinning through the Site-to-Site VPN. This affects whether traffic between two spoke VNets can route through the on-prem FortiGate rather than needing direct spoke-to-spoke peering in Azure.</p>
 
 <h2>📝 Notes / Lessons Learned</h2>
 <ul>
   <li>VNet peering is not transitive by default — two spokes peered to the same hub still need explicit UDRs (with the gateway as next hop) to route traffic between each other</li>
   <li>Gateway transit is easy to overlook in hub-spoke designs — without it, spoke VNets have no path to on-prem even if the hub's VPN is fully functional</li>
-  <li>Route Propagation has to be explicitly enabled on spoke route tables for on-prem routes learned via BGP to actually reach the spokes — a UDR alone doesn't bring in dynamically learned routes</li>
+  <li>Route Propagation has to be explicitly enabled on spoke route tables for on-prem routes learned to actually reach the spokes — a UDR alone doesn't bring in dynamically learned routes</li>
   <li>Hybrid connectivity labs are significantly more valuable than isolated cloud-only exercises, since they surface real routing interactions (like transitive routing across a hub-spoke design) that a pure Azure-to-Azure lab never would</li>
-</ul>
-
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a></li>
 </ul>
 
 </div>
