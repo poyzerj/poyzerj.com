@@ -70,7 +70,7 @@ author_profile: true
 
 <p>Environment:</p>
 <ul>
-  <li>3 Azure VNets: <strong>JPHubVNet</strong> (hub), <strong>JPSpoke1VNet</strong>, and <strong>JPSpoke2VNet</strong> (Central US region)</li>
+  <li>3 Azure VNets: <strong>JPHubVNet</strong> (hub), <strong>JPSpoke1VNet</strong>, and <strong>JPSpoke2VNet</strong> (spokes)</li>
   <li>Virtual Network Gateway hosted in JPHubVNet</li>
   <li>Site-to-Site VPN connecting JPHubVNet to an on-prem FortiGate</li>
   <li>Point-to-Site OpenVPN with Entra ID authentication, also terminating on JPHubVNet's gateway</li>
