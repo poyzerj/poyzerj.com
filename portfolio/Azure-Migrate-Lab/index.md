@@ -76,11 +76,5 @@ author_profile: true
 <h2>🤔 Why This Project</h2>
 <p>Building hands-on familiarity with it, rather than relying solely on conceptual knowledge from certification study, is intended to translate directly into stronger contribution on similar real-world migration projects.</p>
 
-<h2>🔗 Related Projects</h2>
-<ul>
-  <li><a href="/portfolio/RDS-Lab">RDS Lab (Planned)</a></li>
-  <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a></li>
-  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a></li>
-</ul>
 
 </div>
