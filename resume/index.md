@@ -157,7 +157,7 @@ author_profile: true
         <div class="job-date">August 2025 – Present</div>
       </div>
       <ul>
-        <li>Deliver Tier III support by diagnosing and resolving complex network issues across Fortinet firewall environments and Cisco switching infrastructure</li>
+        <li>Deliver Tier III support by diagnosing and resolving complex network, systems, and cloud infrastructure issues across Fortinet, Cisco, Windows, and Azure environments.</li>
         <li>Facilitate project-to-service handoffs, bridging the Professional Services and Managed Service teams to ensure continuity for newly deployed client environments</li>
         <li>Follow structured change-management and incident-management processes, ensuring documentation and escalation procedures maintain network stability and SLA compliance</li>
         <li>Continuously expand technical expertise in emerging networking technologies and best practices</li>
