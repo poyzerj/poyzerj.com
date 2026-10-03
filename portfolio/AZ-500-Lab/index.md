@@ -77,7 +77,7 @@ author_profile: true
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0);
   padding: 40px;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,7 @@ author_profile: true
 .modal-header {
   padding: 16px 20px;
   background-color: #ffffff;
-  border-bottom: 1px solid #eee;
+  border-bottom: none;
   border-radius: 8px 8px 0 0;
   display: flex;
   justify-content: space-between;
