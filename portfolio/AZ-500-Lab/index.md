@@ -79,6 +79,7 @@ author_profile: true
   overflow: hidden;
   background-color: rgba(0,0,0,0);
   padding: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
