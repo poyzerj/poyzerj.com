@@ -139,6 +139,23 @@ author_profile: true
   background-color: #ffffff;
 }
 
+.modal-body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
 .modal-body img {
   width: 100%;
   height: auto;
