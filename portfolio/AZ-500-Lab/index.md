@@ -79,7 +79,6 @@ author_profile: true
   overflow: hidden;
   background-color: rgba(0,0,0,0);
   padding: 40px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -135,16 +134,13 @@ author_profile: true
 
 .modal-body {
   padding: 0;
-  overflow: auto;
+  overflow-y: auto;
   flex: 1;
   background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .modal-body img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0;
