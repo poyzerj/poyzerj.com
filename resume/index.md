@@ -128,7 +128,7 @@ author_profile: true
 
   <div class="resume-section">
     <h2>Certifications</h2>
-    <p><strong>Microsoft:</strong> Azure Security Engineer Associate (In Progress) &middot; Azure Network Engineer Associate (June 2026) &middot; 365 Administrator Expert (Aug 2024) &middot; 365 Endpoint Administrator Associate (Dec 2023) &middot; Azure Solutions Architect Expert (Dec 2022) &middot; Windows Server Hybrid Administrator Associate (July 2022) &middot; Azure Administrator Associate (Dec 2020)</p>
+    <p><strong>Microsoft:</strong> Azure Security Engineer Associate (August 2026) &middot; Azure Network Engineer Associate (June 2026) &middot; 365 Administrator Expert (Aug 2024) &middot; 365 Endpoint Administrator Associate (Dec 2023) &middot; Azure Solutions Architect Expert (Dec 2022) &middot; Windows Server Hybrid Administrator Associate (July 2022) &middot; Azure Administrator Associate (Dec 2020)</p>
     <p><strong>Cisco:</strong> CCNP Enterprise (In Progress) &middot; CCNA Cybersecurity (March 2023) &middot; CCNA Automation (Sept 2022) &middot; CCNA (Oct 2020)</p>
     <p><strong>Fortinet:</strong> NSE 7 Secure Networking (May 2026) &middot; NSE 6 Secure Networking (April 2025) &middot; NSE 5 Secure Networking (May 2024) &middot; NSE 4 FortiOS (Feb 2024)</p>
     <p><strong>CompTIA:</strong> Project+ (April 2023) &middot; Security+ (Nov 2019) &middot; Network+ (July 2019) &middot; A+ (Jan 2019)</p>
