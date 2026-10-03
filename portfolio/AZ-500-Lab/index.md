@@ -46,6 +46,7 @@ author_profile: true
   max-width: 100%;
   height: auto;
   margin: 20px 0;
+  cursor: zoom-in;
 }
 
 .lab-content a {
@@ -65,6 +66,88 @@ author_profile: true
 .lab-content em {
   font-size: 15px;
   color: #666;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.75);
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 90%;
+  max-width: 1100px;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.modal .close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: #000;
+}
+
+.modal-body {
+  padding: 0;
+  overflow: auto;
+  flex: 1;
+  background-color: #f6f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  cursor: default;
 }
 </style>
 
@@ -111,32 +194,32 @@ author_profile: true
 <h2>🚧 The Three-Layer RDP Mystery</h2>
 <p>The last test in the validation plan was Connection Troubleshoot — real traffic, not a simulation — from <strong>JPAZVM12</strong> (Spoke1) to <strong>JPAZVM13</strong> (Spoke2) on port 3389. By design this was expected to come back <strong>Unreachable</strong>, since Spoke2's NSG only allows RDP from the hub subnet and on-prem, not from Spoke1 directly. It did:</p>
 
-<img src="/portfolio/AZ-500-Lab/01-connection-troubleshoot-unreachable.png" alt="Connection Troubleshoot showing Unreachable, 316 probes sent, 316 failed" />
-<p><em>Connection Troubleshoot: Unreachable, 316/316 probes failed — the expected result.</em></p>
+<img src="/portfolio/AZ-500-Lab/01-connection-troubleshoot-unreachable.png" alt="Connection Troubleshoot showing Unreachable, 316 probes sent, 316 failed" onclick="openImageModal('/portfolio/AZ-500-Lab/01-connection-troubleshoot-unreachable.png', 'Connection Troubleshoot — Unreachable')" />
+<p><em>Connection Troubleshoot: Unreachable, 316/316 probes failed — the expected result. (Click to enlarge.)</em></p>
 
 <p>That was the expected result — right up until I modified <code>Allow-RDP-From-Hub</code> to add JPAZVM12's IP as an explicit source, intending to test opening that one host through. The NSG rule now clearly allowed it. Connection Troubleshoot still said Unreachable, 316/316 failed.</p>
 
 <p><strong>Troubleshooting approach:</strong> work outward from the NSG, since that's the layer I'd just changed. First, confirm outbound wasn't the problem — the Spoke1 NSG's outbound rules were untouched, just the platform defaults:</p>
 
-<img src="/portfolio/AZ-500-Lab/02-nsg-outbound-rules-default.png" alt="NSG outbound rules showing only the default AllowVnetOutBound, AllowInternetOutBound, and DenyAllOutBound rules" />
-<p><em>Spoke1's outbound rules, unmodified — the default AllowVnetOutBound already covers this.</em></p>
+<img src="/portfolio/AZ-500-Lab/02-nsg-outbound-rules-default.png" alt="NSG outbound rules showing only the default AllowVnetOutBound, AllowInternetOutBound, and DenyAllOutBound rules" onclick="openImageModal('/portfolio/AZ-500-Lab/02-nsg-outbound-rules-default.png', 'JPNSGSpoke1 — Outbound Security Rules')" />
+<p><em>Spoke1's outbound rules, unmodified — the default AllowVnetOutBound already covers this. (Click to enlarge.)</em></p>
 
 <p>The <code>VirtualNetwork</code> service tag includes peered VNets, so outbound from Spoke1 to Spoke2 was never the issue. With NSG outbound on Spoke1 allowed, NSG inbound on Spoke2 allowed (after my edit), and still 100% probe failure, there was exactly one checkpoint left on the path: Azure Firewall. UDRs route all Spoke1↔Spoke2 traffic through the firewall, and its policy only had a network rule for TCP 443 — nothing for 3389. <strong>Azure Firewall default-denies anything with no matching rule</strong>, so it was silently dropping every SYN regardless of what either NSG said.</p>
 
 <p>Adding a network rule fixed it — permitting TCP 3389 from Spoke1 to Spoke2:</p>
 
-<img src="/portfolio/AZ-500-Lab/03-firewall-rdp-rule-added.png" alt="Firewall policy rule collection showing the new net-allow-rdp rule, permitting TCP 3389 from 10.1.0.0/24 to 10.2.0.0/24" />
-<p><em>The missing firewall rule, added — TCP 3389, Spoke1 to Spoke2, Allow.</em></p>
+<img src="/portfolio/AZ-500-Lab/03-firewall-rdp-rule-added.png" alt="Firewall policy rule collection showing the new net-allow-rdp rule, permitting TCP 3389 from 10.1.0.0/24 to 10.2.0.0/24" onclick="openImageModal('/portfolio/AZ-500-Lab/03-firewall-rdp-rule-added.png', 'Firewall Policy — net-allow-rdp Rule Added')" />
+<p><em>The missing firewall rule, added — TCP 3389, Spoke1 to Spoke2, Allow. (Click to enlarge.)</em></p>
 
 <p>Re-running Connection Troubleshoot: Reachable, 316/316 probes passed.</p>
 
-<img src="/portfolio/AZ-500-Lab/04-connectivity-reachable.png" alt="Connection Troubleshoot now showing Reachable, 316 probes sent, 0 failed" />
-<p><em>Reachable — once both the NSG and the firewall agreed.</em></p>
+<img src="/portfolio/AZ-500-Lab/04-connectivity-reachable.png" alt="Connection Troubleshoot now showing Reachable, 316 probes sent, 0 failed" onclick="openImageModal('/portfolio/AZ-500-Lab/04-connectivity-reachable.png', 'Connection Troubleshoot — Reachable')" />
+<p><em>Reachable — once both the NSG and the firewall agreed. (Click to enlarge.)</em></p>
 
 <p>Except the full diagnostic (Connectivity + NSG diagnostic + Next Hop + Port Scanner, all in one pass) told a more complete story — three checks passed clean, and a fourth came back stuck:</p>
 
-<img src="/portfolio/AZ-500-Lab/05-full-diagnostic-port-timeout.png" alt="Full diagnostic results: Connectivity Reachable, Outbound and Inbound NSG diagnostic Allow, Next hop Success via Virtual Appliance, and Destination port accessible showing Timeout" />
-<p><em>Everything upstream passes — but "Destination port accessible" times out.</em></p>
+<img src="/portfolio/AZ-500-Lab/05-full-diagnostic-port-timeout.png" alt="Full diagnostic results: Connectivity Reachable, Outbound and Inbound NSG diagnostic Allow, Next hop Success via Virtual Appliance, and Destination port accessible showing Timeout" onclick="openImageModal('/portfolio/AZ-500-Lab/05-full-diagnostic-port-timeout.png', 'Full Diagnostic — Destination Port Accessible: Timeout')" />
+<p><em>Everything upstream passes — but "Destination port accessible" times out. (Click to enlarge.)</em></p>
 
 <p>"Destination port accessible" is a different question than "can a packet get there" — it's asking whether something is actually listening on 3389 from the destination VM's own perspective. A timeout there, with everything upstream green, points past Azure entirely and into the guest OS. Sure enough: these VMs had never been RDP'd into, so Windows Defender Firewall on JPAZVM13 was still blocking RDP at its default, out-of-the-box state — a layer Network Watcher can diagnose the symptom of but can't reach to fix.</p>
 
@@ -164,3 +247,48 @@ Enable-NetFirewallRule -DisplayGroup "Remote Desktop"</code></pre>
 </ul>
 
 </div>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="imageModalTitle">Screenshot</h3>
+      <span class="close" onclick="closeImageModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <img id="imageModalImg" src="" alt="" />
+    </div>
+  </div>
+</div>
+
+<script>
+function openImageModal(src, title) {
+  const modal = document.getElementById('imageModal');
+  const modalTitle = document.getElementById('imageModalTitle');
+  const modalImg = document.getElementById('imageModalImg');
+
+  modalTitle.textContent = title;
+  modalImg.src = src;
+  modalImg.alt = title;
+  modal.style.display = 'flex';
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('imageModal');
+  if (event.target == modal) {
+    closeImageModal();
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeImageModal();
+  }
+});
+</script>
