@@ -136,7 +136,7 @@ author_profile: true
   padding: 0;
   overflow: auto;
   flex: 1;
-  background-color: #f6f8fa;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
