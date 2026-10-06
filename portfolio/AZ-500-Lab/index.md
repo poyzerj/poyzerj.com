@@ -189,21 +189,68 @@ author_profile: true
 <h2>🔒 Segmentation: NSGs & ASGs</h2>
 <p>The first surprise of this project showed up before any new resources were even deployed: peering two VNets together does <strong>not</strong> segment them. Azure's platform-default <code>AllowVnetInBound</code> rule (priority 65000) quietly allows everything inside the peered address space, and it can't be deleted — only out-prioritized. Phase 1 added an explicit <code>Deny-VirtualNetwork-Inbound</code> rule (priority 4000) and <code>Deny-Internet-Inbound</code> (4010) to all three NSGs, then layered narrow allows above them for exactly what's needed: RDP and ICMP from on-prem, plus RDP from the hub as a jump-host path.</p>
 
-<p>Application Security Groups (<code>asg-hub-infra</code>, <code>asg-spoke1-workload</code>, <code>asg-spoke2-workload</code>) sit between the NSG rules and the VMs so rules reference a role instead of a hardcoded IP. With one VM per role today that's not saving much, but it means the rules don't need to change if a role ever grows past one VM.</p>
+<img src="/portfolio/AZ-500-Lab/06-nsg-deny-rules-spoke1.png" alt="JPNSGSpoke1 inbound security rules showing Deny-VirtualNetwork-Inbound and Deny-Internet-Inbound ranked above the platform default AllowVnetInBound" onclick="openImageModal('/portfolio/AZ-500-Lab/06-nsg-deny-rules-spoke1.png', 'JPNSGSpoke1 — Inbound Security Rules')" />
+<p><em>JPNSGSpoke1's full rule set, platform defaults included — the explicit denies at 4000/4010 sit well above AllowVnetInBound at 65000. (Click to enlarge.)</em></p>
+
+<p>Application Security Groups (<code>JPASGHub</code>, <code>JPASGSpoke1</code>, <code>JPASGSpoke2</code>) sit between the NSG rules and the VMs so rules reference a role instead of a hardcoded IP. With one VM per role today that's not saving much, but it means the rules don't need to change if a role ever grows past one VM.</p>
+
+<img src="/portfolio/AZ-500-Lab/07-asg-membership-spoke1.png" alt="JPASGSpoke1 Application Security Group overview showing it tied to JPAZVM12-nic (10.1.0.4), attached to JPAZVM12" onclick="openImageModal('/portfolio/AZ-500-Lab/07-asg-membership-spoke1.png', 'JPASGSpoke1 — Membership')" />
+<p><em>JPASGSpoke1's membership — tied to JPAZVM12's NIC, the same object referenced as a destination in the NSG rules above. (Click to enlarge.)</em></p>
 
 <h2>🔥 Centralized Firewall & Egress Control</h2>
 <p>Segmentation handles north-south trust at the NSG layer, but spoke-to-spoke traffic over VNet peering has no inspection point in the path at all by default — peering just connects, it doesn't route through anything. Phase 2 deployed an Azure Firewall (Standard SKU) into the hub and built a policy with a network rule permitting HTTPS egress from both spokes and an application rule allowing Windows Update by FQDN tag, with Threat Intelligence in Alert mode to start.</p>
 
+<img src="/portfolio/AZ-500-Lab/08-firewall-rule-collections.png" alt="JPAZFW01-Policy rule collections showing rcg-spoke-egress with net-allow-required (network, priority 100) and app-allow-updates (application, priority 200)" onclick="openImageModal('/portfolio/AZ-500-Lab/08-firewall-rule-collections.png', 'Firewall Policy — Rule Collections')" />
+<p><em>The policy's two rule collections: baseline HTTPS egress, and Windows Update by FQDN tag. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/09-firewall-threat-intelligence.png" alt="JPAZFW01-Policy Threat Intelligence setting showing Alert Only mode" onclick="openImageModal('/portfolio/AZ-500-Lab/09-firewall-threat-intelligence.png', 'Firewall Policy — Threat Intelligence')" />
+<p><em>Threat Intelligence set to Alert Only — validate against real lab traffic before tightening to Alert and Deny. (Click to enlarge.)</em></p>
+
 <h2>⚠️ The UDR Precedence Gotcha</h2>
-<p>This phase had its own gotcha, and it's the one worth remembering: Azure resolves routing by longest-prefix match, and a user-defined route only beats a system route at <strong>equal or greater</strong> specificity. The automatic peering route between the two spokes and the explicit UDR pointing spoke-to-spoke traffic at the firewall are both <code>/16</code> prefixes — so adding only a <code>0.0.0.0/0 → Firewall</code> default route wasn't enough. Without an explicit <code>10.2.0.0/16 → Firewall</code> route on Spoke1's route table (and the mirror on Spoke2's), the automatic peering route kept winning and spoke-to-spoke traffic silently bypassed the firewall entirely. Nothing errored. Nothing warned about it. The only way to catch it was to check Next Hop and see <code>VirtualNetwork</code> instead of <code>VirtualAppliance</code> — which is exactly what Phase 4 is for.</p>
+<p>This phase had its own gotcha, and it's the one worth remembering: Azure resolves routing by longest-prefix match, and a user-defined route only beats a system route at <strong>equal or greater</strong> specificity. The automatic peering route between the two spokes and the explicit UDR pointing spoke-to-spoke traffic at the firewall were originally both <code>/16</code> prefixes — so adding only a <code>0.0.0.0/0 → Firewall</code> default route wasn't enough. Without an explicit <code>/16 → Firewall</code> route on Spoke1's route table (and the mirror on Spoke2's), the automatic peering route kept winning and spoke-to-spoke traffic silently bypassed the firewall entirely. Nothing errored. Nothing warned about it. The only way to catch it was to check Next Hop and see <code>VirtualNetwork</code> instead of <code>VirtualAppliance</code> — which is exactly what Phase 4 is for.</p>
+
+<p>Those routes have since been tightened to the spokes' actual, resized address spaces (<code>/23</code> instead of <code>/16</code>), so they now win on specificity alone rather than relying on the UDR-over-system tiebreak — same underlying lesson either way.</p>
+
+<img src="/portfolio/AZ-500-Lab/10-udr-route-table-spoke1.png" alt="RT-Spoke1 routes showing to-Internet (0.0.0.0/0) and to-Spoke2 (10.2.0.0/23), both Virtual Appliance to 10.0.2.4" onclick="openImageModal('/portfolio/AZ-500-Lab/10-udr-route-table-spoke1.png', 'RT-Spoke1 — Routes')" />
+<p><em>RT-Spoke1: both routes pointing at the firewall's private IP. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/11-udr-route-table-spoke2.png" alt="RT-Spoke2 routes showing to-Internet (0.0.0.0/0) and to-Spoke1 (10.1.0.0/23), both Virtual Appliance to 10.0.2.4" onclick="openImageModal('/portfolio/AZ-500-Lab/11-udr-route-table-spoke2.png', 'RT-Spoke2 — Routes')" />
+<p><em>RT-Spoke2, mirrored. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/12-udr-effective-routes-after.png" alt="Effective routes on JPAZVM12-nic showing the User route to 10.2.0.0/23 Active via Virtual appliance, and the Default 0.0.0.0/0 Internet route marked Invalid" onclick="openImageModal('/portfolio/AZ-500-Lab/12-udr-effective-routes-after.png', 'JPAZVM12-nic — Effective Routes')" />
+<p><em>The UDR actually winning in practice — and a nice side effect: the platform's own 0.0.0.0/0 route shows as Invalid, superseded by the custom one. (Click to enlarge.)</em></p>
 
 <h2>🔐 Secure VPN Connectivity</h2>
 <p>No new build here — the Site-to-Site (custom IPsec/IKE policy, AES256/SHA256/DH Group 14/PFS2048) and Point-to-Site (Entra ID authentication, OpenVPN) connections already existed from the AZ-700 project. This phase was about reviewing what was already there and mapping it explicitly to this domain's requirements: a custom cipher suite instead of accepting Azure's default proposal, and identity-based P2S auth instead of a shared certificate.</p>
+
+<img src="/portfolio/AZ-500-Lab/13-vpn-s2s-connected.png" alt="JPVPNGW connections showing JPAZ-to-JPHome, Site-to-site (IPsec), status Connected" onclick="openImageModal('/portfolio/AZ-500-Lab/13-vpn-s2s-connected.png', 'VPN Gateway — S2S Connection')" />
+<p><em>The Site-to-Site connection to the on-prem FortiGate, Connected. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/14-vpn-s2s-ipsec-policy.png" alt="JPAZ-to-JPHome connection configuration showing custom IPsec/IKE policy: AES256 encryption, SHA256 integrity, DHGroup14, PFS2048" onclick="openImageModal('/portfolio/AZ-500-Lab/14-vpn-s2s-ipsec-policy.png', 'S2S Connection — Custom IPsec/IKE Policy')" />
+<p><em>The custom cipher suite instead of Azure's default proposal. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/15-vpn-p2s-config.png" alt="JPVPNGW Point-to-site configuration showing address pool 172.16.20.0/24, OpenVPN (SSL) tunnel type, Microsoft Entra ID authentication" onclick="openImageModal('/portfolio/AZ-500-Lab/15-vpn-p2s-config.png', 'VPN Gateway — P2S Configuration')" />
+<p><em>Point-to-Site: Entra ID authentication instead of a shared certificate. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/16-vpn-p2s-entra-app.png" alt="Azure VPN app registration in Microsoft Entra ID showing status Activated" onclick="openImageModal('/portfolio/AZ-500-Lab/16-vpn-p2s-entra-app.png', 'Entra ID — Azure VPN App Registration')" />
+<p><em>The Entra ID side of P2S auth — the Azure VPN Client app registration, active. (Click to enlarge.)</em></p>
 
 <h2>🔍 Visibility & Validation</h2>
 <p>This phase deploys nothing — it's a validation pass against the earlier phases, run through five Network Watcher tools: Effective Security Rules, Next Hop, IP Flow Verify, NSG Diagnostics, and Connection Troubleshoot.</p>
 
 <p>Flow logs were evaluated for this phase first, and dropped. Both NSG Flow Logs and Virtual Network Flow Logs produce deeply nested JSON with no simple allow/deny field — flow state gets folded into a single value instead — and critically, they never capture the IP Flow Verify or NSG Diagnostics tests, since neither of those tools sends a real packet; they're rule-evaluation simulations. Network Watcher's other diagnostics validate the same enforcement more directly and read far better live, so flow logging was left out of the build rather than bolted on as a sixth method.</p>
+
+<img src="/portfolio/AZ-500-Lab/17-effective-security-rules.png" alt="Effective security rules on JPAZVM12-nic showing the combined inbound and outbound rule set, with Deny-VirtualNetwork-Inbound and Deny-Internet-Inbound ranked above AllowVnetInBound" onclick="openImageModal('/portfolio/AZ-500-Lab/17-effective-security-rules.png', 'JPAZVM12-nic — Effective Security Rules')" />
+<p><em>The combined rule set as actually applied on the NIC — not just what the NSG's own definition says. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/18-ip-flow-verify-allow.png" alt="IP Flow Verify result showing Access allowed, matched by Allow-RDP-From-Home on JPNSGSpoke1" onclick="openImageModal('/portfolio/AZ-500-Lab/18-ip-flow-verify-allow.png', 'IP Flow Verify — Access Allowed')" />
+<p><em>Inbound RDP from an on-prem source: Allowed, matched by Allow-RDP-From-Home. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/19-nsg-diagnostics-allowed.png" alt="NSG Diagnostics result showing Traffic status Allowed across every NSG evaluated for outbound Spoke1 to Spoke2 traffic" onclick="openImageModal('/portfolio/AZ-500-Lab/19-nsg-diagnostics-allowed.png', 'NSG Diagnostics — Allowed')" />
+<p><em>NSG Diagnostics names every NSG in the path and the specific rule that matched — useful when a result needs explaining, not just confirming. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/20-next-hop-virtual-appliance.png" alt="Next Hop result from JPAZVM12 to 10.2.0.4 showing Next hop type VirtualAppliance, IP address 10.0.2.4" onclick="openImageModal('/portfolio/AZ-500-Lab/20-next-hop-virtual-appliance.png', 'Next Hop — Virtual Appliance')" />
+<p><em>Spoke-to-spoke traffic routing through the firewall, confirmed directly. (Click to enlarge.)</em></p>
 
 <h2>🚧 The Three-Layer RDP Mystery</h2>
 <p>The last test in the validation plan was Connection Troubleshoot — real traffic, not a simulation — from <strong>JPAZVM12</strong> (Spoke1) to <strong>JPAZVM13</strong> (Spoke2) on port 3389. By design this was expected to come back <strong>Unreachable</strong>, since Spoke2's NSG only allows RDP from the hub subnet and on-prem, not from Spoke1 directly. It did:</p>
