@@ -240,11 +240,20 @@ author_profile: true
 
 <p>Flow logs were evaluated for this phase first, and dropped. Both NSG Flow Logs and Virtual Network Flow Logs produce deeply nested JSON with no simple allow/deny field — flow state gets folded into a single value instead — and critically, they never capture the IP Flow Verify or NSG Diagnostics tests, since neither of those tools sends a real packet; they're rule-evaluation simulations. Network Watcher's other diagnostics validate the same enforcement more directly and read far better live, so flow logging was left out of the build rather than bolted on as a sixth method.</p>
 
+<img src="/portfolio/AZ-500-Lab/21-effective-security-rules-setup.png" alt="Network Watcher Effective Security Rules tool targeting JPAZVM12, network interface JPAZVM12-nic, showing Associated NSGs: JPNSGSpoke1" onclick="openImageModal('/portfolio/AZ-500-Lab/21-effective-security-rules-setup.png', 'Effective Security Rules — Target')" />
+<p><em>Targeting JPAZVM12-nic — the tool confirms its associated NSG before showing the combined rule set. (Click to enlarge.)</em></p>
+
 <img src="/portfolio/AZ-500-Lab/17-effective-security-rules.png" alt="Effective security rules on JPAZVM12-nic showing the combined inbound and outbound rule set, with Deny-VirtualNetwork-Inbound and Deny-Internet-Inbound ranked above AllowVnetInBound" onclick="openImageModal('/portfolio/AZ-500-Lab/17-effective-security-rules.png', 'JPAZVM12-nic — Effective Security Rules')" />
 <p><em>The combined rule set as actually applied on the NIC — not just what the NSG's own definition says. (Click to enlarge.)</em></p>
 
+<img src="/portfolio/AZ-500-Lab/22-ip-flow-verify-setup.png" alt="IP Flow Verify configured for JPAZVM12, inbound TCP, local port 3389, remote IP 192.168.20.10" onclick="openImageModal('/portfolio/AZ-500-Lab/22-ip-flow-verify-setup.png', 'IP Flow Verify — Test Configuration')" />
+<p><em>Simulating inbound RDP from an on-prem address against JPAZVM12. (Click to enlarge.)</em></p>
+
 <img src="/portfolio/AZ-500-Lab/18-ip-flow-verify-allow.png" alt="IP Flow Verify result showing Access allowed, matched by Allow-RDP-From-Home on JPNSGSpoke1" onclick="openImageModal('/portfolio/AZ-500-Lab/18-ip-flow-verify-allow.png', 'IP Flow Verify — Access Allowed')" />
 <p><em>Inbound RDP from an on-prem source: Allowed, matched by Allow-RDP-From-Home. (Click to enlarge.)</em></p>
+
+<img src="/portfolio/AZ-500-Lab/23-nsg-diagnostics-setup.png" alt="NSG Diagnostics configured for JPAZVM12, outbound traffic from 10.1.0.4 to 10.2.0.4 on port 3389" onclick="openImageModal('/portfolio/AZ-500-Lab/23-nsg-diagnostics-setup.png', 'NSG Diagnostics — Test Configuration')" />
+<p><em>Tracing outbound Spoke1-to-Spoke2 RDP traffic through every NSG in the path. (Click to enlarge.)</em></p>
 
 <img src="/portfolio/AZ-500-Lab/19-nsg-diagnostics-allowed.png" alt="NSG Diagnostics result showing Traffic status Allowed across every NSG evaluated for outbound Spoke1 to Spoke2 traffic" onclick="openImageModal('/portfolio/AZ-500-Lab/19-nsg-diagnostics-allowed.png', 'NSG Diagnostics — Allowed')" />
 <p><em>NSG Diagnostics names every NSG in the path and the specific rule that matched — useful when a result needs explaining, not just confirming. (Click to enlarge.)</em></p>
