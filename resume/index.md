@@ -161,6 +161,7 @@ author_profile: true
         <li>Facilitate project-to-service handoffs, bridging the Professional Services and Managed Service teams to ensure continuity for newly deployed client environments</li>
         <li>Follow structured change-management and incident-management processes, ensuring documentation and escalation procedures maintain network stability and SLA compliance</li>
         <li>Continuously expand technical expertise in emerging networking technologies and best practices</li>
+        <li>Assist with client deployments, including firewall, switch, and UPS configuration and setup Microsoft Entra SSO</li>
       </ul>
     </div>
 
