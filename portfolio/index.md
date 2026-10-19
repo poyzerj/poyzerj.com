@@ -60,6 +60,7 @@ author_profile: true
 
 <h2>Automation & Scripting</h2>
 <ul>
+  <li><a href="/portfolio/EVE-NG-MCP-Server">EVE-NG MCP Server for Claude</a></li>
   <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
   <li><a href="/portfolio/FortiGate-Bootstrap">FortiGate Bootstrap Script</a></li>
   <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit & Troubleshoot Tool</a></li>
