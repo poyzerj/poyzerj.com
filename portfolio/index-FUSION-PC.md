@@ -1,0 +1,75 @@
+---
+permalink: /portfolio/
+title: "Portfolio"
+layout: single
+author_profile: true
+---
+
+<style>
+.projects-content h2 {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
+.projects-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.projects-content ul {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.projects-content li {
+  margin-bottom: 10px;
+}
+
+.projects-content a {
+  font-weight: bold;
+}
+</style>
+
+<div class="projects-content">
+
+<p>The following projects and labs reflect hands-on work across networking, systems, virtualization, and Azure, with an emphasis on the practical troubleshooting and problem-solving involved in each build.</p>
+
+<h2>Networking</h2>
+<ul>
+  <li><a href="/portfolio/OSPF-3-Router-Lab">OSPF - 3 Router Lab</a></li>
+  <li><a href="/portfolio/NSE7-OSPF-over-IPsec">NSE7 - OSPF over IPsec VPN</a></li>
+</ul>
+
+<h2>Systems & Virtualization</h2>
+<ul>
+  <li><a href="/portfolio/Cisco-UCS-Setup">Cisco UCS Lab Server Deployment</a></li>
+  <li><a href="/portfolio/Failover-Cluster-Lab">Failover Cluster Lab</a></li>
+  <li><a href="/portfolio/Hyper-V-to-Proxmox-Migration">Hyper-V to Proxmox Migration</a></li>
+  <li><a href="/portfolio/ESXi-to-Hyper-V-Migration">ESXi to Hyper-V Migration</a></li>
+</ul>
+
+<h2>Cloud & Azure</h2>
+<ul>
+  <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
+  <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a></li>
+  <li><a href="/portfolio/AZ-500-Lab">AZ-500 - Securing an Azure Hub-Spoke Network</a></li>
+</ul>
+
+<h2>Automation & Scripting</h2>
+<ul>
+  <li><a href="/portfolio/EVE-NG-MCP-Server">EVE-NG MCP Server for Claude</a></li>
+  <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
+  <li><a href="/portfolio/FortiGate-Bootstrap">FortiGate Bootstrap Script</a></li>
+  <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit & Troubleshoot Tool</a></li>
+</ul>
+
+<h2>On the Roadmap</h2>
+<ul>
+  <li><a href="/portfolio/RDS-Lab">RDS Lab (Planned)</a></li>
+  <li><a href="/portfolio/Azure-Migrate-Lab">Azure Migrate Lab (Planned)</a></li>
+</ul>
+
+</div>
