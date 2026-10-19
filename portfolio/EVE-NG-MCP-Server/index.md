@@ -76,7 +76,7 @@ author_profile: true
 <h2>My Setup</h2>
 <ul>
   <li>EVE-NG Community running as a VM on Proxmox, on a Cisco UCS server in my home lab</li>
-  <li>Claude Desktop on my Windows PC, running the MCP server locally over stdio</li>
+  <li>Claude Desktop on my Windows PC, running the MCP server locally over stdio (standard input/output). That just means Claude Desktop starts the server as a background program on my PC and they pass messages back and forth directly. Nothing listens on the network, so nothing else can connect to it.</li>
   <li>IOSv routers, IOSvL2 switches and VPCS for end hosts</li>
 </ul>
 
@@ -92,10 +92,10 @@ author_profile: true
 <h2>What I Added</h2>
 
 <h3>Console access</h3>
-<p>The original could build a lab but couldn't talk to the devices. EVE-NG exposes each node's console as a raw telnet port, and the port number is predictable:</p>
+<p>The original could build a lab but couldn't talk to the devices. EVE-NG gives every node a console port. It's the same connection SecureCRT opens when I click a node in the web UI, and it only exists inside my lab network. The port number is predictable:</p>
 <pre><code>def console_port(node_id: int, pod: int = 0) -&gt; int:
     return 32768 + 128 * int(pod) + int(node_id)</code></pre>
-<p>I wrote a small telnet driver that handles the initial config dialog, waits for the prompt, enters and exits config mode on its own and stops at the first rejected line. Each device gets a lock so two jobs can't type into the same console at once. That actually happened on my SW1 before I added it, and the config was a mess.</p>
+<p>I wrote a small console driver that handles the initial config dialog, waits for the prompt, enters and exits config mode on its own and stops at the first rejected line. Each device gets a lock so two jobs can't type into the same console at once. That actually happened on my SW1 before I added it, and the config was a mess.</p>
 
 <h3>Asking before answering [confirm]</h3>
 <p>Early on the driver was auto-answering prompts like <code>[confirm]</code>, which is fine until it's a reload or an erase. Now any device question gets cancelled with Ctrl+C and sent back to me. It only gets answered if I say yes and the tool is re-run with <code>confirm=true</code>.</p>
