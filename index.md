@@ -72,7 +72,7 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 
 <p><strong>Cloud, Systems &amp; Virtualization:</strong></p>
 <ul>
-  <li><strong>Microsoft Azure:</strong> Azure Network Engineer Associate certified, Azure Security Engineer Associate (in progress) - VNets, VPN Gateway, hybrid cloud connectivity, Azure Virtual Desktop</li>
+  <li><strong>Microsoft Azure:</strong> Azure Network Engineer Associate certified, Azure Security Engineer Associate - VNets, VPN Gateway, hybrid cloud connectivity, Azure Virtual Desktop</li>
   <li><strong>Microsoft 365:</strong> Administrator Expert certified - endpoint management, cloud services administration</li>
   <li><strong>Virtualization:</strong> VMware vSphere, Proxmox VE, Hyper-V - server virtualization, failover clustering, and hypervisor migration</li>
   <li><strong>Active Directory:</strong> Domain Services, Group Policies, user and computer management</li>
@@ -95,7 +95,7 @@ excerpt: "Networking, Systems, Cloud, Virtualization & Automation"
 <h2>Certifications</h2>
 <p>I maintain an extensive portfolio of industry certifications demonstrating my commitment to continuous learning:</p>
 
-<p><strong>Microsoft:</strong> Azure Security Engineer Associate (In Progress) &middot; Azure Network Engineer Associate &middot; 365 Administrator Expert &middot; 365 Endpoint Administrator Associate &middot; Azure Solutions Architect Expert &middot; Windows Server Hybrid Administrator Associate &middot; Azure Administrator Associate</p>
+<p><strong>Microsoft:</strong> Azure Security Engineer Associate &middot; Azure Network Engineer Associate &middot; 365 Administrator Expert &middot; 365 Endpoint Administrator Associate &middot; Azure Solutions Architect Expert &middot; Windows Server Hybrid Administrator Associate &middot; Azure Administrator Associate</p>
 
 <p><strong>Cisco:</strong> CCNP Enterprise (In Progress) &middot; CCNA Cybersecurity &middot; CCNA Automation &middot; CCNA</p>
 

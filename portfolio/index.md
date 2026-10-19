@@ -55,10 +55,12 @@ author_profile: true
 <ul>
   <li><a href="/portfolio/AZ-700-Lab">AZ-700 - Azure Hub-Spoke Network with Hybrid Connectivity</a></li>
   <li><a href="/portfolio/AVD-Lab">Azure Virtual Desktop Lab</a></li>
+  <li><a href="/portfolio/AZ-500-Lab">AZ-500 - Securing an Azure Hub-Spoke Network</a></li>
 </ul>
 
 <h2>Automation & Scripting</h2>
 <ul>
+  <li><a href="/portfolio/EVE-NG-MCP-Server">EVE-NG MCP Server for Claude</a></li>
   <li><a href="/portfolio/Catalyst-1300-Bootstrap">Catalyst 1300 Bootstrap Script</a></li>
   <li><a href="/portfolio/FortiGate-Bootstrap">FortiGate Bootstrap Script</a></li>
   <li><a href="/portfolio/FortiGate-Audit-Troubleshoot">FortiGate Audit & Troubleshoot Tool</a></li>
